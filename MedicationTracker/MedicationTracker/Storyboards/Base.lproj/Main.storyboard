@@ -60,6 +60,9 @@
                                         <rect key="frame" x="18.5" y="184" width="152" height="52"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                         <state key="normal" title="Reminders"/>
+                                        <connections>
+                                            <segue destination="ba4-vk-t4E" kind="show" identifier="ReminderSegue" id="PGi-2J-wEq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -153,6 +156,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="26A-yr-oyc"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3Fa-PS-PVg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hv-5d-45h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
