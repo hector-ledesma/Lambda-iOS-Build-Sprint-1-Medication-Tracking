@@ -16,6 +16,7 @@
 		9C0F6913240EEBD00045DE77 /* MainScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F6912240EEBD00045DE77 /* MainScreenTableViewCell.swift */; };
 		9C0F6915240EEC280045DE77 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F6914240EEC280045DE77 /* MainMenuViewController.swift */; };
 		9C0F6917240EF5B50045DE77 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F6916240EF5B50045DE77 /* DetailViewController.swift */; };
+		9C0F6919240EF8020045DE77 /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F6918240EF8020045DE77 /* RemindersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9C0F6912240EEBD00045DE77 /* MainScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableViewCell.swift; sourceTree = "<group>"; };
 		9C0F6914240EEC280045DE77 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		9C0F6916240EF5B50045DE77 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9C0F6918240EF8020045DE77 /* RemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				9C0F6910240EEB4B0045DE77 /* MainScreenViewController.swift */,
 				9C0F6914240EEC280045DE77 /* MainMenuViewController.swift */,
 				9C0F6916240EF5B50045DE77 /* DetailViewController.swift */,
+				9C0F6918240EF8020045DE77 /* RemindersViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0F6913240EEBD00045DE77 /* MainScreenTableViewCell.swift in Sources */,
+				9C0F6919240EF8020045DE77 /* RemindersViewController.swift in Sources */,
 				9C0F6915240EEC280045DE77 /* MainMenuViewController.swift in Sources */,
 				9C0F68F6240EE9EE0045DE77 /* AppDelegate.swift in Sources */,
 				9C0F6917240EF5B50045DE77 /* DetailViewController.swift in Sources */,
