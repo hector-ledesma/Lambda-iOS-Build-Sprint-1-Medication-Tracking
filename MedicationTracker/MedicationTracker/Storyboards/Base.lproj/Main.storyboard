@@ -52,6 +52,9 @@
                                         <rect key="frame" x="0.0" y="92" width="189" height="52"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                         <state key="normal" title="Create Group"/>
+                                        <connections>
+                                            <segue destination="qqo-Dz-ADA" kind="presentation" identifier="CreateGroupSegue" id="FJn-cQ-BNi"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uo1-Dx-XT0">
                                         <rect key="frame" x="18.5" y="184" width="152" height="52"/>
@@ -251,4 +254,7 @@
         <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="FJn-cQ-BNi"/>
+    </inferredMetricsTieBreakers>
 </document>
