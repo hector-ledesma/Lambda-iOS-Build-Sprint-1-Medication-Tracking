@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9C0F68F6240EE9EE0045DE77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F68F5240EE9EE0045DE77 /* AppDelegate.swift */; };
 		9C0F68F8240EE9EE0045DE77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F68F7240EE9EE0045DE77 /* SceneDelegate.swift */; };
-		9C0F68FA240EE9EE0045DE77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F68F9240EE9EE0045DE77 /* ViewController.swift */; };
 		9C0F68FD240EE9EE0045DE77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0F68FB240EE9EE0045DE77 /* Main.storyboard */; };
 		9C0F68FF240EE9EF0045DE77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C0F68FE240EE9EF0045DE77 /* Assets.xcassets */; };
 		9C0F6902240EE9EF0045DE77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0F6900240EE9EF0045DE77 /* LaunchScreen.storyboard */; };
@@ -19,7 +18,6 @@
 		9C0F68F2240EE9EE0045DE77 /* MedicationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C0F68F5240EE9EE0045DE77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C0F68F7240EE9EE0045DE77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9C0F68F9240EE9EE0045DE77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9C0F68FC240EE9EE0045DE77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C0F68FE240EE9EF0045DE77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C0F6901240EE9EF0045DE77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +54,54 @@
 		9C0F68F4240EE9EE0045DE77 /* MedicationTracker */ = {
 			isa = PBXGroup;
 			children = (
-				9C0F68F5240EE9EE0045DE77 /* AppDelegate.swift */,
-				9C0F68F7240EE9EE0045DE77 /* SceneDelegate.swift */,
-				9C0F68F9240EE9EE0045DE77 /* ViewController.swift */,
-				9C0F68FB240EE9EE0045DE77 /* Main.storyboard */,
-				9C0F68FE240EE9EF0045DE77 /* Assets.xcassets */,
-				9C0F6900240EE9EF0045DE77 /* LaunchScreen.storyboard */,
-				9C0F6903240EE9EF0045DE77 /* Info.plist */,
+				9C0F690E240EEA660045DE77 /* Resources */,
+				9C0F690C240EEA560045DE77 /* Storyboards */,
+				9C0F690B240EEA510045DE77 /* Controllers */,
+				9C0F690A240EEA490045DE77 /* Models */,
+				9C0F6909240EEA3F0045DE77 /* Views */,
 			);
 			path = MedicationTracker;
+			sourceTree = "<group>";
+		};
+		9C0F6909240EEA3F0045DE77 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9C0F690A240EEA490045DE77 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9C0F690B240EEA510045DE77 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9C0F690C240EEA560045DE77 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9C0F68FB240EE9EE0045DE77 /* Main.storyboard */,
+				9C0F6900240EE9EF0045DE77 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		9C0F690E240EEA660045DE77 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C0F6903240EE9EF0045DE77 /* Info.plist */,
+				9C0F68FE240EE9EF0045DE77 /* Assets.xcassets */,
+				9C0F68F7240EE9EE0045DE77 /* SceneDelegate.swift */,
+				9C0F68F5240EE9EE0045DE77 /* AppDelegate.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +175,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C0F68FA240EE9EE0045DE77 /* ViewController.swift in Sources */,
 				9C0F68F6240EE9EE0045DE77 /* AppDelegate.swift in Sources */,
 				9C0F68F8240EE9EE0045DE77 /* SceneDelegate.swift in Sources */,
 			);
@@ -285,7 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MedicationTracker/Info.plist;
+				INFOPLIST_FILE = MedicationTracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MedicationTracker/Info.plist;
+				INFOPLIST_FILE = MedicationTracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
