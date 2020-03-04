@@ -81,7 +81,12 @@ class DetailViewController: UIViewController {
             dismiss(animated: true, completion: nil)
             
         } else if segue == "Group" {
-            groupController?.create(name: name, items: itemsToBeAdded)
+            guard let newGroup = groupController?.create(name: name, items: itemsToBeAdded) else { fatalError() }
+            
+            if createAlertSwitch.isOn {
+                alertManager?.createAlert(identifier: newGroup)
+            }
+            
             dismiss(animated: true, completion: nil)
         }
     }

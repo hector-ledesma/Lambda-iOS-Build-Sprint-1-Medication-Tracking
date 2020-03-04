@@ -30,6 +30,12 @@ class MainScreenViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+        for alerts in alertManager.alerts {
+            if alerts.isActive {
+                print("Alert for \(alerts.identifier.name) is active.")
+            }
+        }
+        
     }
     
 

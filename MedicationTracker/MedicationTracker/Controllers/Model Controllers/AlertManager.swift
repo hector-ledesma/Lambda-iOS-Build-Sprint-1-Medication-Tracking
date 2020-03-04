@@ -13,5 +13,6 @@ class AlertManager {
     
     func createAlert(identifier: Identifier) {
         let newAlert = Alert(item: identifier)
+        self.alerts.append(newAlert)
     }
 }
