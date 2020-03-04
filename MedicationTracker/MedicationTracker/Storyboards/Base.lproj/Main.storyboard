@@ -119,7 +119,7 @@
                                 <rect key="frame" x="0.0" y="276" width="414" height="586"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ljw-E1-7j1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ljw-E1-7j1" customClass="RemindersTableViewCell" customModule="MedicationTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="42.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ljw-E1-7j1" id="F42-Ok-d5B">
@@ -141,6 +141,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7u-5n-Xw2">
                                                     <rect key="frame" x="341" y="7" width="54" height="30"/>
                                                     <state key="normal" title="Inactive"/>
+                                                    <connections>
+                                                        <action selector="isActiveTapped:" destination="Ljw-E1-7j1" eventType="touchUpInside" id="ndJ-t7-41y"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -157,6 +160,11 @@
                                                 <constraint firstItem="HzG-Yw-9Qg" firstAttribute="leading" secondItem="F42-Ok-d5B" secondAttribute="leadingMargin" constant="15" id="xhu-gI-9gf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="identifierLabel" destination="HzG-Yw-9Qg" id="g0U-kM-rCb"/>
+                                            <outlet property="isActiveButton" destination="a7u-5n-Xw2" id="bPI-Xv-el8"/>
+                                            <outlet property="whenLabel" destination="BiZ-dP-JfS" id="SXM-RR-GX7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -31,6 +31,7 @@
 		9C22343F240F400B00EAA8A5 /* RefreshManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22343E240F400B00EAA8A5 /* RefreshManager.swift */; };
 		9C223441240FFE1F00EAA8A5 /* AddedItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223440240FFE1F00EAA8A5 /* AddedItemsTableViewCell.swift */; };
 		9C223443240FFE5700EAA8A5 /* ExistingItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223442240FFE5700EAA8A5 /* ExistingItemsTableViewCell.swift */; };
+		9C2234452410463E00EAA8A5 /* RemindersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2234442410463E00EAA8A5 /* RemindersTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		9C22343E240F400B00EAA8A5 /* RefreshManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshManager.swift; sourceTree = "<group>"; };
 		9C223440240FFE1F00EAA8A5 /* AddedItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedItemsTableViewCell.swift; sourceTree = "<group>"; };
 		9C223442240FFE5700EAA8A5 /* ExistingItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingItemsTableViewCell.swift; sourceTree = "<group>"; };
+		9C2234442410463E00EAA8A5 /* RemindersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				9C0F6912240EEBD00045DE77 /* MainScreenTableViewCell.swift */,
 				9C223440240FFE1F00EAA8A5 /* AddedItemsTableViewCell.swift */,
 				9C223442240FFE5700EAA8A5 /* ExistingItemsTableViewCell.swift */,
+				9C2234442410463E00EAA8A5 /* RemindersTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				9C0F68F6240EE9EE0045DE77 /* AppDelegate.swift in Sources */,
 				9C22343D240F3F9F00EAA8A5 /* AlertManager.swift in Sources */,
 				9C223430240F34DF00EAA8A5 /* ItemModel.swift in Sources */,
+				9C2234452410463E00EAA8A5 /* RemindersTableViewCell.swift in Sources */,
 				9C22342C240F345900EAA8A5 /* DayModel.swift in Sources */,
 				9C223437240F38E100EAA8A5 /* DayController.swift in Sources */,
 				9C0F6917240EF5B50045DE77 /* DetailViewController.swift in Sources */,
