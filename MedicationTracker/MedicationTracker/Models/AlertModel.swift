@@ -8,7 +8,9 @@
 
 import Foundation
 
-class Alert {
+class Alert: Equatable {
+    
+    
     var identifier: Identifier
     var isActive: Bool
     
@@ -21,5 +23,9 @@ class Alert {
     
     func createAlerts() {
         
+    }
+    
+    static func == (lhs: Alert, rhs: Alert) -> Bool {
+        return lhs.identifier.name == rhs.identifier.name && lhs.isActive == rhs.isActive
     }
 }

@@ -11,12 +11,16 @@ import Foundation
 class GroupController {
     var groups: [Group] = [Group(name: "Group A", items: [Item(name: "Vitamin D", description: "PRAISE THE SUN"), Item(name: "Iron", description: "STEEL RESOLVE")])]
     
-    func create(name: String, items: [Item]) {
+    func create(name: String, items: [Item], newAlert: Bool) {
         let newGroup = Group(name: name, items: items)
         self.groups.append(newGroup)
+        
+        //For the sake of sending the group from the controller as opposed to this temporary instance I'm doing this in a little bit of a convoluted way.
+        let indexOfNewGroup = self.groups.firstIndex{ return newGroup }
+        
     }
     
-    func newAlerts() {
+    func newAlerts(identifier: Identifier) {
         
     }
     

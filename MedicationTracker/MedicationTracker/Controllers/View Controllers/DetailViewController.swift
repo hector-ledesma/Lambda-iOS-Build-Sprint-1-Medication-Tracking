@@ -24,6 +24,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var existingItemsTableView: UITableView!
     @IBOutlet weak var itemsStack: UIStackView!
     
+    @IBOutlet weak var createAlertSwitch: UISwitch!
+    
+    
     
     
     var dayController: DayController?
@@ -73,6 +76,8 @@ class DetailViewController: UIViewController {
         if segue == "Item" {
             guard let description = descField.text else { return }
             itemController?.create(name: name, description: description)
+            
+            
             dismiss(animated: true, completion: nil)
             
         } else if segue == "Group" {

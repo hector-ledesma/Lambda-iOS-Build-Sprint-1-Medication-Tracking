@@ -8,7 +8,8 @@
 
 import Foundation
 
-class Group: Identifier {
+class Group: Identifier, Equatable {
+    
     var name: String
     var status: Status
     var items: [Item]
@@ -18,5 +19,9 @@ class Group: Identifier {
         self.name = name
         self.status = .standby
         self.items = items
+    }
+    
+    static func == (lhs: Group, rhs: Group) -> Bool {
+        return lhs.name == rhs.name && lhs.status == rhs.status && lhs.items == rhs.items && lhs.alerts == rhs.alerts
     }
 }

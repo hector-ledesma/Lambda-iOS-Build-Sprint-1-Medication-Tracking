@@ -335,12 +335,22 @@
                                     <constraint firstItem="Bbi-fx-D7Q" firstAttribute="trailing" secondItem="lxr-qb-Blv" secondAttribute="trailingMargin" id="ogh-Vl-HZV"/>
                                 </constraints>
                             </stackView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DXb-zy-mYy">
+                                <rect key="frame" x="345" y="721" width="49" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3U-bL-682">
+                                <rect key="frame" x="221" y="726" width="92" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fdR-3o-k68" firstAttribute="leading" secondItem="lxr-qb-Blv" secondAttribute="leading" id="1DI-SH-WMU"/>
                             <constraint firstItem="lxr-qb-Blv" firstAttribute="top" secondItem="fdR-3o-k68" secondAttribute="bottom" constant="42.5" id="4sX-Yd-GfP"/>
                             <constraint firstItem="27O-7n-ynr" firstAttribute="leading" secondItem="cYv-eT-Rbd" secondAttribute="leading" id="5Pu-Vz-vee"/>
+                            <constraint firstItem="DXb-zy-mYy" firstAttribute="top" secondItem="lxr-qb-Blv" secondAttribute="bottom" constant="57.5" id="72l-o0-w3i"/>
                             <constraint firstItem="27O-7n-ynr" firstAttribute="top" secondItem="wU5-Rk-mMj" secondAttribute="top" constant="20" id="AMV-LE-aZF"/>
                             <constraint firstItem="fdR-3o-k68" firstAttribute="trailing" secondItem="lxr-qb-Blv" secondAttribute="trailing" id="AVo-8J-HMJ"/>
                             <constraint firstItem="27O-7n-ynr" firstAttribute="centerY" secondItem="b0P-J9-9Td" secondAttribute="centerY" id="E9r-Ut-2IA"/>
@@ -356,12 +366,16 @@
                             <constraint firstItem="b0P-J9-9Td" firstAttribute="bottom" secondItem="SRR-zo-3ff" secondAttribute="bottom" id="if4-Wi-g3z"/>
                             <constraint firstItem="wU5-Rk-mMj" firstAttribute="trailing" secondItem="SRR-zo-3ff" secondAttribute="trailing" constant="26" id="k0e-Yl-WUD"/>
                             <constraint firstItem="b0P-J9-9Td" firstAttribute="leading" secondItem="27O-7n-ynr" secondAttribute="trailing" constant="13" id="pE8-bu-Ptd"/>
+                            <constraint firstItem="DXb-zy-mYy" firstAttribute="trailing" secondItem="lxr-qb-Blv" secondAttribute="trailing" id="y1i-BH-6RO"/>
                             <constraint firstItem="wU5-Rk-mMj" firstAttribute="trailing" secondItem="fdR-3o-k68" secondAttribute="trailing" constant="20" id="z21-4e-QfR"/>
+                            <constraint firstItem="Q3U-bL-682" firstAttribute="leading" secondItem="wU5-Rk-mMj" secondAttribute="leading" constant="221" id="zFU-o8-dcN"/>
+                            <constraint firstItem="Q3U-bL-682" firstAttribute="centerY" secondItem="DXb-zy-mYy" secondAttribute="centerY" id="zQU-Eg-v3N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wU5-Rk-mMj"/>
                     </view>
                     <connections>
                         <outlet property="addedTableView" destination="Bbi-fx-D7Q" id="99F-8N-Wiv"/>
+                        <outlet property="createAlertSwitch" destination="DXb-zy-mYy" id="evr-yS-Evt"/>
                         <outlet property="descField" destination="yRp-xQ-dWh" id="hp0-gN-On4"/>
                         <outlet property="descLabel" destination="wlI-V6-hx3" id="bUt-x3-KB6"/>
                         <outlet property="descStack" destination="fdR-3o-k68" id="FW7-ao-DYO"/>
