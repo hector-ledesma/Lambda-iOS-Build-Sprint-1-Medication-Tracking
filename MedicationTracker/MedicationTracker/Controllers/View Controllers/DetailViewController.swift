@@ -28,9 +28,11 @@ class DetailViewController: UIViewController {
     var itemController: ItemController?
     var groupController: GroupController?
     var alertManager: AlertManager?
+    var segue: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
 
         // Do any additional setup after loading the view.
     }
@@ -45,6 +47,17 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func updateView() {
+        guard let segue = segue else { return }
+        if segue == "Item" {
+            titleLabel?.text = "Add Item"
+            nameLabel?.text = "Item Name"
+        } else if segue == "Group" {
+            titleLabel?.text = "Add Group"
+            nameLabel?.text = "Group Name"
+        }
+    }
     
     @IBAction func addItemTapped(_ sender: Any) {
     }

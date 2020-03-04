@@ -34,6 +34,16 @@ class MainMenuViewController: UIViewController {
             detailVC.itemController = self.itemController
             detailVC.groupController = self.groupController
             detailVC.alertManager = self.alertManager
+            
+            switch segue.identifier {
+            case "AddItemSegue":
+                detailVC.segue = "Item"
+            case "CreateGroupSegue":
+                detailVC.segue = "Group"
+            default:
+                fatalError()
+            }
+            
         }
         
     }
