@@ -9,7 +9,13 @@
 import UIKit
 
 class MainMenuViewController: UIViewController {
-
+    
+    var dayController: DayController?
+    var itemController: ItemController?
+    var groupController: GroupController?
+    var alertManager: AlertManager?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
