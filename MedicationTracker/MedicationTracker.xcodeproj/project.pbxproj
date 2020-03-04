@@ -24,6 +24,11 @@
 		9C223430240F34DF00EAA8A5 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22342F240F34DF00EAA8A5 /* ItemModel.swift */; };
 		9C223432240F356B00EAA8A5 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223431240F356B00EAA8A5 /* GroupModel.swift */; };
 		9C223434240F35A700EAA8A5 /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223433240F35A700EAA8A5 /* StatusModel.swift */; };
+		9C223437240F38E100EAA8A5 /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223436240F38E100EAA8A5 /* DayController.swift */; };
+		9C223439240F3EE100EAA8A5 /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223438240F3EE100EAA8A5 /* ItemController.swift */; };
+		9C22343B240F3F4700EAA8A5 /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22343A240F3F4700EAA8A5 /* GroupController.swift */; };
+		9C22343D240F3F9F00EAA8A5 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22343C240F3F9F00EAA8A5 /* AlertManager.swift */; };
+		9C22343F240F400B00EAA8A5 /* RefreshManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22343E240F400B00EAA8A5 /* RefreshManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +51,11 @@
 		9C22342F240F34DF00EAA8A5 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		9C223431240F356B00EAA8A5 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		9C223433240F35A700EAA8A5 /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
+		9C223436240F38E100EAA8A5 /* DayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
+		9C223438240F3EE100EAA8A5 /* ItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
+		9C22343A240F3F4700EAA8A5 /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
+		9C22343C240F3F9F00EAA8A5 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		9C22343E240F400B00EAA8A5 /* RefreshManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +121,7 @@
 		9C0F690B240EEA510045DE77 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9C223435240F38C900EAA8A5 /* Model Controllers */,
 				9C0F690F240EEB0E0045DE77 /* View Controllers */,
 			);
 			path = Controllers;
@@ -146,6 +157,18 @@
 				9C0F691A240EF8E30045DE77 /* CalendarViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9C223435240F38C900EAA8A5 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C223436240F38E100EAA8A5 /* DayController.swift */,
+				9C223438240F3EE100EAA8A5 /* ItemController.swift */,
+				9C22343A240F3F4700EAA8A5 /* GroupController.swift */,
+				9C22343C240F3F9F00EAA8A5 /* AlertManager.swift */,
+				9C22343E240F400B00EAA8A5 /* RefreshManager.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,15 +244,20 @@
 			files = (
 				9C0F691B240EF8E30045DE77 /* CalendarViewController.swift in Sources */,
 				9C0F6913240EEBD00045DE77 /* MainScreenTableViewCell.swift in Sources */,
+				9C223439240F3EE100EAA8A5 /* ItemController.swift in Sources */,
 				9C0F6919240EF8020045DE77 /* RemindersViewController.swift in Sources */,
+				9C22343F240F400B00EAA8A5 /* RefreshManager.swift in Sources */,
 				9C223434240F35A700EAA8A5 /* StatusModel.swift in Sources */,
 				9C0F6915240EEC280045DE77 /* MainMenuViewController.swift in Sources */,
 				9C22342A240F339900EAA8A5 /* IdentifierProtocol.swift in Sources */,
 				9C0F68F6240EE9EE0045DE77 /* AppDelegate.swift in Sources */,
+				9C22343D240F3F9F00EAA8A5 /* AlertManager.swift in Sources */,
 				9C223430240F34DF00EAA8A5 /* ItemModel.swift in Sources */,
 				9C22342C240F345900EAA8A5 /* DayModel.swift in Sources */,
+				9C223437240F38E100EAA8A5 /* DayController.swift in Sources */,
 				9C0F6917240EF5B50045DE77 /* DetailViewController.swift in Sources */,
 				9C223432240F356B00EAA8A5 /* GroupModel.swift in Sources */,
+				9C22343B240F3F4700EAA8A5 /* GroupController.swift in Sources */,
 				9C0F68F8240EE9EE0045DE77 /* SceneDelegate.swift in Sources */,
 				9C22342E240F349600EAA8A5 /* AlertModel.swift in Sources */,
 				9C0F6911240EEB4B0045DE77 /* MainScreenViewController.swift in Sources */,
