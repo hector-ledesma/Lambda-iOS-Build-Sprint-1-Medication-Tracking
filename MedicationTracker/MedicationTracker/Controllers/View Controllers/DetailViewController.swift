@@ -61,13 +61,21 @@ class DetailViewController: UIViewController {
         }
     }
     
+    
+    // MARK: - Buttons Functionality
     @IBAction func addItemTapped(_ sender: Any) {
+        
     }
     @IBAction func saveTappeed(_ sender: Any) {
         guard let name = nameField.text,
             !name.isEmpty else { return }
         
-        if segue == "Group" {
+        if segue == "Item" {
+            guard let description = descField.text else { return }
+            itemController?.create(name: name, description: description)
+            dismiss(animated: true, completion: nil)
+            
+        } else if segue == "Group" {
             groupController?.create(name: name, items: itemsToBeAdded)
             dismiss(animated: true, completion: nil)
         }

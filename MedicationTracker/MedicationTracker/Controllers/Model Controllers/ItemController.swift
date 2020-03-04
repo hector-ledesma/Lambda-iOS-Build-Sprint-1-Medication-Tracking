@@ -11,8 +11,9 @@ import Foundation
 class ItemController {
     var items: [Item] = [Item(name: "Vitamin D", description: "PRAISE THE SUN"), Item(name: "Iron", description: "STEEL RESOLVE")]
     
-    func create(name: String) {
-        
+    func create(name: String, description: String) {
+        let newItem = Item(name: name, description: description)
+        self.items.append(newItem)
     }
     
     func update(name: String) {
