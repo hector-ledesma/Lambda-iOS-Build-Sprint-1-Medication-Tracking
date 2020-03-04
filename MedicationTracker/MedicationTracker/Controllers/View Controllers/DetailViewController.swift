@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var itemsStack: UIStackView!
     
     @IBOutlet weak var createAlertSwitch: UISwitch!
+    @IBOutlet weak var createAlertStack: UIStackView!
     
     
     
@@ -61,6 +62,7 @@ class DetailViewController: UIViewController {
             titleLabel?.text = "Add Group"
             nameLabel?.text = "Group Name"
             descStack.isHidden = true
+            createAlertStack.isHidden = false
         }
     }
     
