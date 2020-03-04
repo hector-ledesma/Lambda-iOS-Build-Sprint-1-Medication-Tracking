@@ -9,7 +9,7 @@
 import Foundation
 
 class ItemController {
-    var items: [Item] = []
+    var items: [Item] = [Item(name: "Vitamin D", description: "PRAISE THE SUN"), Item(name: "Iron", description: "STEEL RESOLVE")]
     
     func create(name: String) {
         

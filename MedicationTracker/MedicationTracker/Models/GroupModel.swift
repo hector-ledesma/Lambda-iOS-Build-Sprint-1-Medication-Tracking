@@ -12,12 +12,11 @@ class Group: Identifier {
     var name: String
     var status: Status
     var items: [Item]
-    var alerts: [Alert]
+    var alerts: [Alert] = []
     
-    init(name: String, items: [Item], alerts: [Alert]) {
+    init(name: String, items: [Item]) {
         self.name = name
         self.status = .standby
         self.items = items
-        self.alerts = alerts
     }
 }

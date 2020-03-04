@@ -15,9 +15,6 @@ class MainScreenViewController: UIViewController {
     let groupController = GroupController()
     let alertManager = AlertManager()
     
-    let item1: Item = Item(name: "Vitamin D", description: "PRAISE THE SUN")
-    let item2: Item = Item(name: "Iron", description: "STEEL RESOLVE")
-    
     @IBOutlet weak var tableView: UITableView!
     
 
@@ -48,11 +45,15 @@ class MainScreenViewController: UIViewController {
 extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "mainViewCell") as? MainScreenTableViewCell else { fatalError("Could not convert items to cells") }
+        
+        
+        
+        return cell
     }
     
     
