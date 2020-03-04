@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     
+    @IBOutlet weak var navButton: UIButton!
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -73,6 +74,7 @@ class DetailViewController: UIViewController {
             descStack.isHidden = true
             createAlertStack.isHidden = false
         } else if segue == .editGroup {
+            navButton.setTitle("Delete", for: .normal)
             titleLabel?.text = "Edit Group"
             nameLabel?.text = "Group Name"
             descStack.isHidden = true
@@ -88,7 +90,7 @@ class DetailViewController: UIViewController {
     @IBAction func addItemTapped(_ sender: Any) {
         
     }
-    @IBAction func saveTappeed(_ sender: Any) {
+    @IBAction func navButtonTappeed(_ sender: Any) {
         guard let name = nameField.text,
             !name.isEmpty else { return }
         
@@ -107,6 +109,8 @@ class DetailViewController: UIViewController {
             }
             
             dismiss(animated: true, completion: nil)
+        } else if segue == .editGroup {
+            
         }
     }
     

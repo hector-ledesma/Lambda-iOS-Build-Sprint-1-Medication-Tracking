@@ -261,7 +261,7 @@
                                 <rect key="frame" x="354" y="30.5" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="saveTappeed:" destination="qqo-Dz-ADA" eventType="touchUpInside" id="LEd-0t-g1H"/>
+                                    <action selector="navButtonTappeed:" destination="qqo-Dz-ADA" eventType="touchUpInside" id="3hX-j2-pt1"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lxr-qb-Blv">
@@ -415,6 +415,7 @@
                         <outlet property="itemsStack" destination="lxr-qb-Blv" id="uCx-Nw-ijF"/>
                         <outlet property="nameField" destination="U5X-FY-q37" id="Wlf-9C-9do"/>
                         <outlet property="nameLabel" destination="cYv-eT-Rbd" id="IQF-OE-D9w"/>
+                        <outlet property="navButton" destination="SRR-zo-3ff" id="rFA-s1-bDE"/>
                         <outlet property="titleLabel" destination="b0P-J9-9Td" id="6Dj-rD-Wk4"/>
                     </connections>
                 </viewController>

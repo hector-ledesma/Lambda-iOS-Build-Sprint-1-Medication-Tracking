@@ -21,4 +21,8 @@ class AlertManager {
         var newAlert = Alert(item: identifier)
         self.alerts.append(newAlert)
     }
+    
+    func deleteAlert(identifier: Identifier) {
+        
+    }
 }
