@@ -18,6 +18,7 @@
 		9C0F6917240EF5B50045DE77 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F6916240EF5B50045DE77 /* DetailViewController.swift */; };
 		9C0F6919240EF8020045DE77 /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F6918240EF8020045DE77 /* RemindersViewController.swift */; };
 		9C0F691B240EF8E30045DE77 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F691A240EF8E30045DE77 /* CalendarViewController.swift */; };
+		9C22342A240F339900EAA8A5 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223429240F339900EAA8A5 /* IdentifierProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9C0F6916240EF5B50045DE77 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9C0F6918240EF8020045DE77 /* RemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
 		9C0F691A240EF8E30045DE77 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		9C223429240F339900EAA8A5 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		9C0F690A240EEA490045DE77 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9C223429240F339900EAA8A5 /* IdentifierProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				9C0F6913240EEBD00045DE77 /* MainScreenTableViewCell.swift in Sources */,
 				9C0F6919240EF8020045DE77 /* RemindersViewController.swift in Sources */,
 				9C0F6915240EEC280045DE77 /* MainMenuViewController.swift in Sources */,
+				9C22342A240F339900EAA8A5 /* IdentifierProtocol.swift in Sources */,
 				9C0F68F6240EE9EE0045DE77 /* AppDelegate.swift in Sources */,
 				9C0F6917240EF5B50045DE77 /* DetailViewController.swift in Sources */,
 				9C0F68F8240EE9EE0045DE77 /* SceneDelegate.swift in Sources */,
