@@ -19,6 +19,11 @@
 		9C0F6919240EF8020045DE77 /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F6918240EF8020045DE77 /* RemindersViewController.swift */; };
 		9C0F691B240EF8E30045DE77 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F691A240EF8E30045DE77 /* CalendarViewController.swift */; };
 		9C22342A240F339900EAA8A5 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223429240F339900EAA8A5 /* IdentifierProtocol.swift */; };
+		9C22342C240F345900EAA8A5 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22342B240F345900EAA8A5 /* DayModel.swift */; };
+		9C22342E240F349600EAA8A5 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22342D240F349600EAA8A5 /* AlertModel.swift */; };
+		9C223430240F34DF00EAA8A5 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22342F240F34DF00EAA8A5 /* ItemModel.swift */; };
+		9C223432240F356B00EAA8A5 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223431240F356B00EAA8A5 /* GroupModel.swift */; };
+		9C223434240F35A700EAA8A5 /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223433240F35A700EAA8A5 /* StatusModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		9C0F6918240EF8020045DE77 /* RemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
 		9C0F691A240EF8E30045DE77 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9C223429240F339900EAA8A5 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
+		9C22342B240F345900EAA8A5 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
+		9C22342D240F349600EAA8A5 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
+		9C22342F240F34DF00EAA8A5 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		9C223431240F356B00EAA8A5 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
+		9C223433240F35A700EAA8A5 /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +99,11 @@
 			isa = PBXGroup;
 			children = (
 				9C223429240F339900EAA8A5 /* IdentifierProtocol.swift */,
+				9C22342B240F345900EAA8A5 /* DayModel.swift */,
+				9C22342D240F349600EAA8A5 /* AlertModel.swift */,
+				9C22342F240F34DF00EAA8A5 /* ItemModel.swift */,
+				9C223431240F356B00EAA8A5 /* GroupModel.swift */,
+				9C223433240F35A700EAA8A5 /* StatusModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,11 +222,16 @@
 				9C0F691B240EF8E30045DE77 /* CalendarViewController.swift in Sources */,
 				9C0F6913240EEBD00045DE77 /* MainScreenTableViewCell.swift in Sources */,
 				9C0F6919240EF8020045DE77 /* RemindersViewController.swift in Sources */,
+				9C223434240F35A700EAA8A5 /* StatusModel.swift in Sources */,
 				9C0F6915240EEC280045DE77 /* MainMenuViewController.swift in Sources */,
 				9C22342A240F339900EAA8A5 /* IdentifierProtocol.swift in Sources */,
 				9C0F68F6240EE9EE0045DE77 /* AppDelegate.swift in Sources */,
+				9C223430240F34DF00EAA8A5 /* ItemModel.swift in Sources */,
+				9C22342C240F345900EAA8A5 /* DayModel.swift in Sources */,
 				9C0F6917240EF5B50045DE77 /* DetailViewController.swift in Sources */,
+				9C223432240F356B00EAA8A5 /* GroupModel.swift in Sources */,
 				9C0F68F8240EE9EE0045DE77 /* SceneDelegate.swift in Sources */,
+				9C22342E240F349600EAA8A5 /* AlertModel.swift in Sources */,
 				9C0F6911240EEB4B0045DE77 /* MainScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
