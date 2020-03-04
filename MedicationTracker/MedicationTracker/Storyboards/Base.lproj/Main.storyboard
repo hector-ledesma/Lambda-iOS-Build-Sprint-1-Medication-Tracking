@@ -241,6 +241,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRR-zo-3ff">
                                 <rect key="frame" x="354" y="31" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveTappeed:" destination="qqo-Dz-ADA" eventType="touchUpInside" id="LEd-0t-g1H"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hts-qa-V3D">
                                 <rect key="frame" x="20" y="389" width="51" height="26"/>
@@ -308,6 +311,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odk-yC-mH7">
                                 <rect key="frame" x="20" y="524" width="70" height="30"/>
                                 <state key="normal" title="Add Items"/>
+                                <connections>
+                                    <action selector="addItemTapped:" destination="qqo-Dz-ADA" eventType="touchUpInside" id="QCa-nd-Lny"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -344,6 +350,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wU5-Rk-mMj"/>
                     </view>
+                    <connections>
+                        <outlet property="addedTableView" destination="Bbi-fx-D7Q" id="99F-8N-Wiv"/>
+                        <outlet property="descField" destination="yRp-xQ-dWh" id="hp0-gN-On4"/>
+                        <outlet property="descLabel" destination="wlI-V6-hx3" id="bUt-x3-KB6"/>
+                        <outlet property="existingItemsTableView" destination="Hjg-lt-XyH" id="JGp-Fd-zWs"/>
+                        <outlet property="itemsLabel" destination="hts-qa-V3D" id="ngf-l4-qh1"/>
+                        <outlet property="nameField" destination="U5X-FY-q37" id="Wlf-9C-9do"/>
+                        <outlet property="nameLabel" destination="cYv-eT-Rbd" id="IQF-OE-D9w"/>
+                        <outlet property="titleLabel" destination="b0P-J9-9Td" id="6Dj-rD-Wk4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWr-YL-dp1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,7 +9,26 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameField: UITextField!
+    
+    @IBOutlet var descLabel: UILabel!
+    @IBOutlet weak var descField: UITextField!
+    
+    @IBOutlet weak var itemsLabel: UILabel!
+    @IBOutlet weak var addedTableView: UITableView!
+    @IBOutlet weak var existingItemsTableView: UITableView!
+    
+    
+    
+    var dayController: DayController?
+    var itemController: ItemController?
+    var groupController: GroupController?
+    var alertManager: AlertManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,5 +45,11 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func addItemTapped(_ sender: Any) {
+    }
+    @IBAction func saveTappeed(_ sender: Any) {
+    }
+    
 
 }
