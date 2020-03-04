@@ -17,10 +17,12 @@ class DetailViewController: UIViewController {
     
     @IBOutlet var descLabel: UILabel!
     @IBOutlet weak var descField: UITextField!
+    @IBOutlet weak var descStack: UIStackView!
     
     @IBOutlet weak var itemsLabel: UILabel!
     @IBOutlet weak var addedTableView: UITableView!
     @IBOutlet weak var existingItemsTableView: UITableView!
+    @IBOutlet weak var itemsStack: UIStackView!
     
     
     
@@ -53,9 +55,11 @@ class DetailViewController: UIViewController {
         if segue == "Item" {
             titleLabel?.text = "Add Item"
             nameLabel?.text = "Item Name"
+            itemsStack.isHidden = true
         } else if segue == "Group" {
             titleLabel?.text = "Add Group"
             nameLabel?.text = "Group Name"
+            descStack.isHidden = true
         }
     }
     
