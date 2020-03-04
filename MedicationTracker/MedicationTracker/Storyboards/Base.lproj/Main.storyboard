@@ -194,6 +194,9 @@
                         <viewLayoutGuide key="safeArea" id="26A-yr-oyc"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Fa-PS-PVg"/>
+                    <connections>
+                        <outlet property="remindersTableView" destination="9hv-7g-rpx" id="yCg-7O-hjA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hv-5d-45h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

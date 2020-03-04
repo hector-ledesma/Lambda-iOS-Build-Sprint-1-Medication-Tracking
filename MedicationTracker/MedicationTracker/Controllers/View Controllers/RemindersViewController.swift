@@ -10,6 +10,7 @@ import UIKit
 
 class RemindersViewController: UIViewController {
 
+    @IBOutlet weak var remindersTableView: UITableView!
     
     var dayController: DayController?
     var itemController: ItemController?
@@ -33,4 +34,19 @@ class RemindersViewController: UIViewController {
     }
     */
 
+}
+
+// MARK: - Table View Functionality
+
+extension RemindersViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
 }
