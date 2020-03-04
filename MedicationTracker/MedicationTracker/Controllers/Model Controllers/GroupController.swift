@@ -12,7 +12,7 @@ class GroupController {
     var groups: [Group] = [Group(name: "Group A", items: [Item(name: "Vitamin D", description: "PRAISE THE SUN"), Item(name: "Iron", description: "STEEL RESOLVE")])]
     
     func create(name: String, items: [Item]) -> Identifier {
-        let newGroup = Group(name: name, items: items)
+        var newGroup = Group(name: name, items: items)
         self.groups.append(newGroup)
         
         //For the sake of sending the group from the controller as opposed to this temporary instance I'm doing this in a little bit of a convoluted way.

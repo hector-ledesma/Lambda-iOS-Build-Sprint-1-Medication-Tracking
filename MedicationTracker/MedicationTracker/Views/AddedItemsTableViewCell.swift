@@ -11,6 +11,7 @@ import UIKit
 class AddedItemsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var itemNameLabel: UILabel!
+    @IBOutlet weak var deleteItemButton: UIButton!
     
     var item: Item? {
         didSet {
@@ -23,6 +24,7 @@ class AddedItemsTableViewCell: UITableViewCell {
             editView()
         }
     }
+    var buttonAction: ((Any) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,8 +43,14 @@ class AddedItemsTableViewCell: UITableViewCell {
     }
     
     func editView() {
-        guard let identifier = identifier else { return }
+        guard let identifier = identifier as? Item else {  return }
         itemNameLabel.text = identifier.name
+        deleteItemButton.isHidden = false
     }
 
+    // MARK: - Buttons Functionality
+    @IBAction func deleteItemTapped(_ sender: UIButton) {
+        self.buttonAction?(sender)
+    }
+    
 }

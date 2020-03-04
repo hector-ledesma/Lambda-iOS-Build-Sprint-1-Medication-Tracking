@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
@@ -41,6 +42,7 @@ class DetailViewController: UIViewController {
     
     // Item for editing
     var identifier: Identifier?
+    var itemsToBeEdited: [Item] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +53,9 @@ class DetailViewController: UIViewController {
         addedTableView.dataSource = self
         existingItemsTableView.delegate = self
         existingItemsTableView.dataSource = self
+        
+        nameField.delegate = self
+        descField.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -71,8 +76,9 @@ class DetailViewController: UIViewController {
             titleLabel?.text = "Edit Group"
             nameLabel?.text = "Group Name"
             descStack.isHidden = true
-            guard let identifier = identifier else { return }
+            guard var identifier = identifier else { return }
             nameField?.text = identifier.name
+            identifier.name = nameField!.text!
             
         }
     }
@@ -103,6 +109,7 @@ class DetailViewController: UIViewController {
             dismiss(animated: true, completion: nil)
         }
     }
+    
 }
 
 
@@ -151,7 +158,15 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 cell = addedCells
             } else if segue == .editGroup {
                 guard let identifier = self.identifier as? Group else { fatalError() }
-                addedCells.identifier = identifier.items[indexPath.row]
+                let item = identifier.items[indexPath.row]
+                addedCells.identifier = item
+                
+                addedCells.buttonAction = { sender in
+                    guard let indexToBeDeleted = identifier.items.firstIndex(of: item) else { fatalError() }
+                            identifier.items.remove(at: indexToBeDeleted)
+                            self.addedTableView.reloadData()
+                }
+                
                 cell = addedCells
             }
             
@@ -176,4 +191,16 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+
+// MARK: - Text Field Functionality
+
+extension DetailViewController: UITextFieldDelegate {
+    @IBAction func editNameField(_ sender: UITextField) {
+        if segue! == .editGroup {
+            guard let identifier = self.identifier as? Group else { fatalError() }
+            identifier.name = sender.text ?? "ERROR WEE WOO"
+        }
+    }
 }

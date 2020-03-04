@@ -9,5 +9,6 @@
 import Foundation
 
 protocol Identifier {
-    var name: String { get }
+    var name: String { get set }
 }
+
