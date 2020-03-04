@@ -26,15 +26,15 @@
                                 <rect key="frame" x="43" y="116.5" width="104" height="84"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMt-su-pha">
-                                <rect key="frame" x="232" y="186" width="84" height="21"/>
+                                <rect key="frame" x="232" y="186.5" width="84" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USa-Wg-KXs">
-                                <rect key="frame" x="345" y="181" width="49" height="31"/>
+                                <rect key="frame" x="345" y="181" width="51" height="31"/>
                             </switch>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Zje-GZ-PDz">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Zje-GZ-PDz">
                                 <rect key="frame" x="113" y="330" width="188" height="236"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wi2-Yc-Noy">
@@ -127,7 +127,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzG-Yw-9Qg">
-                                                    <rect key="frame" x="35" y="11" width="63" height="21"/>
+                                                    <rect key="frame" x="35" y="11" width="63" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -266,7 +266,7 @@
                                             <constraint firstAttribute="height" constant="102" id="K07-Yb-5ah"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tKF-hn-if5">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tKF-hn-if5" customClass="AddedItemsTableViewCell" customModule="MedicationTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="374" height="43"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tKF-hn-if5" id="r7I-OT-PMV">
@@ -286,6 +286,9 @@
                                                         <constraint firstItem="Q3p-Ey-a8l" firstAttribute="leading" secondItem="r7I-OT-PMV" secondAttribute="leadingMargin" id="sdg-n5-oho"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="itemNameLabel" destination="Q3p-Ey-a8l" id="P4q-Bt-pud"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -300,7 +303,7 @@
                                         <rect key="frame" x="0.0" y="172.5" width="374" height="102"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tce-UA-rn4">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tce-UA-rn4" customClass="ExistingItemsTableViewCell" customModule="MedicationTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="374" height="43"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tce-UA-rn4" id="0Tx-t6-IVw">
@@ -320,6 +323,9 @@
                                                         <constraint firstItem="exs-cY-iky" firstAttribute="centerY" secondItem="0Tx-t6-IVw" secondAttribute="centerY" id="bzO-Mh-lVi"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="itemNameLabel" destination="exs-cY-iky" id="XIP-tf-azx"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>

@@ -29,6 +29,8 @@
 		9C22343B240F3F4700EAA8A5 /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22343A240F3F4700EAA8A5 /* GroupController.swift */; };
 		9C22343D240F3F9F00EAA8A5 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22343C240F3F9F00EAA8A5 /* AlertManager.swift */; };
 		9C22343F240F400B00EAA8A5 /* RefreshManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22343E240F400B00EAA8A5 /* RefreshManager.swift */; };
+		9C223441240FFE1F00EAA8A5 /* AddedItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223440240FFE1F00EAA8A5 /* AddedItemsTableViewCell.swift */; };
+		9C223443240FFE5700EAA8A5 /* ExistingItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223442240FFE5700EAA8A5 /* ExistingItemsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		9C22343A240F3F4700EAA8A5 /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
 		9C22343C240F3F9F00EAA8A5 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		9C22343E240F400B00EAA8A5 /* RefreshManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshManager.swift; sourceTree = "<group>"; };
+		9C223440240FFE1F00EAA8A5 /* AddedItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedItemsTableViewCell.swift; sourceTree = "<group>"; };
+		9C223442240FFE5700EAA8A5 /* ExistingItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingItemsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				9C0F6912240EEBD00045DE77 /* MainScreenTableViewCell.swift */,
+				9C223440240FFE1F00EAA8A5 /* AddedItemsTableViewCell.swift */,
+				9C223442240FFE5700EAA8A5 /* ExistingItemsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,7 +254,9 @@
 				9C0F6919240EF8020045DE77 /* RemindersViewController.swift in Sources */,
 				9C22343F240F400B00EAA8A5 /* RefreshManager.swift in Sources */,
 				9C223434240F35A700EAA8A5 /* StatusModel.swift in Sources */,
+				9C223443240FFE5700EAA8A5 /* ExistingItemsTableViewCell.swift in Sources */,
 				9C0F6915240EEC280045DE77 /* MainMenuViewController.swift in Sources */,
+				9C223441240FFE1F00EAA8A5 /* AddedItemsTableViewCell.swift in Sources */,
 				9C22342A240F339900EAA8A5 /* IdentifierProtocol.swift in Sources */,
 				9C0F68F6240EE9EE0045DE77 /* AppDelegate.swift in Sources */,
 				9C22343D240F3F9F00EAA8A5 /* AlertManager.swift in Sources */,
