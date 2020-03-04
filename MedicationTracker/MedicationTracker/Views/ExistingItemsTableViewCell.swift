@@ -12,6 +12,12 @@ class ExistingItemsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var itemNameLabel: UILabel!
     
+    var item: Item? {
+        didSet {
+            updateView()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,6 +27,11 @@ class ExistingItemsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updateView() {
+        guard let item = item else { return }
+        itemNameLabel.text = item.name
     }
 
 }
