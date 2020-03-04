@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 class Alert: Equatable {
     
@@ -22,6 +23,24 @@ class Alert: Equatable {
     }
     
     func createAlerts() {
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Time for gains!"
+        if let group = self.identifier as? Group {
+            content.body = "Remember tou take your \(group.name) supplements! "
+            for items in group.items {
+                content.body += "\(items.name) "
+            }
+        }
+        content.categoryIdentifier = "alarm"
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: self.identifier.name, content: content, trigger: trigger)
+        center.add(request)
+        print("Created Alert for \(self.identifier.name)")
         
     }
     
