@@ -43,6 +43,13 @@ class MainMenuViewController: UIViewController {
                 fatalError()
             }
             
+        } else if segue.identifier == "ReminderSegue" {
+            guard let alertsVC = segue.destination as? RemindersViewController else { fatalError("Failed Segue from main menu to Detail View" ) }
+            alertsVC.dayController = self.dayController
+            alertsVC.itemController = self.itemController
+            alertsVC.groupController = self.groupController
+            alertsVC.alertManager = self.alertManager
+            
         }
         
     }
