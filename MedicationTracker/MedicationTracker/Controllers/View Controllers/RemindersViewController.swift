@@ -19,6 +19,8 @@ class RemindersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        remindersTableView.delegate = self
+        remindersTableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -41,11 +43,14 @@ class RemindersViewController: UIViewController {
 extension RemindersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return alertManager!.alerts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell") as? RemindersTableViewCell else { fatalError() }
+        cell.alert = alertManager!.alerts[indexPath.row]
+        
+        return cell
     }
     
     
