@@ -15,6 +15,8 @@ class Alert {
     init(item: Identifier) {
         self.identifier = item
         self.isActive = true
+        
+        createAlerts()
     }
     
     func createAlerts() {

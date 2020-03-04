@@ -11,7 +11,7 @@ import Foundation
 class AlertManager {
     var alerts: [Alert] = []
     
-    func createAlert() {
-        
+    func createAlert(identifier: Identifier) {
+        let newAlert = Alert(item: identifier)
     }
 }

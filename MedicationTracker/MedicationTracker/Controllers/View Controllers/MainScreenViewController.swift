@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class MainScreenViewController: UIViewController {
     
@@ -22,6 +23,7 @@ class MainScreenViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        requestPermission()
         
         // Do any additional setup after loading the view.
     }
@@ -45,7 +47,23 @@ class MainScreenViewController: UIViewController {
         }
         
     }
-
+    
+    // MARK: - Notifications Functionality
+    func requestPermission() {
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: .alert) { (granted, error) in
+            if granted {
+                print("Access Granted")
+            } else {
+                print("D'oh!")
+            }
+        }
+    }
+    
+    
+    
+    
 }
 
 
@@ -65,6 +83,5 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    
+  
 }
