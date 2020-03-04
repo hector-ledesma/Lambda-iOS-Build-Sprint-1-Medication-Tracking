@@ -32,6 +32,7 @@
 		9C223441240FFE1F00EAA8A5 /* AddedItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223440240FFE1F00EAA8A5 /* AddedItemsTableViewCell.swift */; };
 		9C223443240FFE5700EAA8A5 /* ExistingItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C223442240FFE5700EAA8A5 /* ExistingItemsTableViewCell.swift */; };
 		9C2234452410463E00EAA8A5 /* RemindersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2234442410463E00EAA8A5 /* RemindersTableViewCell.swift */; };
+		9C22344724104CDF00EAA8A5 /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22344624104CDF00EAA8A5 /* SegueIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		9C223440240FFE1F00EAA8A5 /* AddedItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedItemsTableViewCell.swift; sourceTree = "<group>"; };
 		9C223442240FFE5700EAA8A5 /* ExistingItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingItemsTableViewCell.swift; sourceTree = "<group>"; };
 		9C2234442410463E00EAA8A5 /* RemindersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersTableViewCell.swift; sourceTree = "<group>"; };
+		9C22344624104CDF00EAA8A5 /* SegueIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				9C22342F240F34DF00EAA8A5 /* ItemModel.swift */,
 				9C223431240F356B00EAA8A5 /* GroupModel.swift */,
 				9C223433240F35A700EAA8A5 /* StatusModel.swift */,
+				9C22344624104CDF00EAA8A5 /* SegueIdentifier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				9C0F6913240EEBD00045DE77 /* MainScreenTableViewCell.swift in Sources */,
 				9C223439240F3EE100EAA8A5 /* ItemController.swift in Sources */,
 				9C0F6919240EF8020045DE77 /* RemindersViewController.swift in Sources */,
+				9C22344724104CDF00EAA8A5 /* SegueIdentifier.swift in Sources */,
 				9C22343F240F400B00EAA8A5 /* RefreshManager.swift in Sources */,
 				9C223434240F35A700EAA8A5 /* StatusModel.swift in Sources */,
 				9C223443240FFE5700EAA8A5 /* ExistingItemsTableViewCell.swift in Sources */,

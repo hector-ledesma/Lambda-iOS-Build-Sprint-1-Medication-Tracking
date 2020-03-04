@@ -455,6 +455,7 @@
                                         <connections>
                                             <outlet property="groupCountLabel" destination="AwQ-DQ-dpX" id="4DN-vb-oMP"/>
                                             <outlet property="groupNameLabel" destination="WQs-0d-IeX" id="jWN-kA-MpF"/>
+                                            <segue destination="qqo-Dz-ADA" kind="presentation" identifier="EditItemSegue" id="dgG-66-XLV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -559,6 +560,6 @@
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FJn-cQ-BNi"/>
+        <segue reference="dgG-66-XLV"/>
     </inferredMetricsTieBreakers>
 </document>

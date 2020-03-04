@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
     var itemController: ItemController?
     var groupController: GroupController?
     var alertManager: AlertManager?
-    var segue: String?
+    var segue: SegueIdentifier?
     
     var itemsToBeAdded: [Item] = []
     
@@ -54,11 +54,11 @@ class DetailViewController: UIViewController {
     
     func updateView() {
         guard let segue = segue else { return }
-        if segue == "Item" {
+        if segue == .item {
             titleLabel?.text = "Add Item"
             nameLabel?.text = "Item Name"
             itemsStack.isHidden = true
-        } else if segue == "Group" {
+        } else if segue == .group {
             titleLabel?.text = "Add Group"
             nameLabel?.text = "Group Name"
             descStack.isHidden = true
@@ -75,14 +75,14 @@ class DetailViewController: UIViewController {
         guard let name = nameField.text,
             !name.isEmpty else { return }
         
-        if segue == "Item" {
+        if segue == .item {
             guard let description = descField.text else { return }
             itemController?.create(name: name, description: description)
             
             
             dismiss(animated: true, completion: nil)
             
-        } else if segue == "Group" {
+        } else if segue == .group {
             guard let newGroup = groupController?.create(name: name, items: itemsToBeAdded) else { fatalError() }
             
             if createAlertSwitch.isOn {
