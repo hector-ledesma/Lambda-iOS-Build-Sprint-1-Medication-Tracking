@@ -36,9 +36,9 @@ class MainMenuViewController: UIViewController {
             
             switch segue.identifier {
             case "AddItemSegue":
-                detailVC.segue = .item
+                detailVC.segue = .newItem
             case "CreateGroupSegue":
-                detailVC.segue = .group
+                detailVC.segue = .newGroup
             default:
                 fatalError()
             }

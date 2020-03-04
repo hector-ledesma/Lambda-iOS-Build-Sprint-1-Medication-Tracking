@@ -36,7 +36,11 @@ class DetailViewController: UIViewController {
     var alertManager: AlertManager?
     var segue: SegueIdentifier?
     
+    // Array for new group
     var itemsToBeAdded: [Item] = []
+    
+    // Item for editing
+    var identifier: Identifier?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,15 +58,22 @@ class DetailViewController: UIViewController {
     
     func updateView() {
         guard let segue = segue else { return }
-        if segue == .item {
+        if segue == .newItem {
             titleLabel?.text = "Add Item"
             nameLabel?.text = "Item Name"
             itemsStack.isHidden = true
-        } else if segue == .group {
+        } else if segue == .newGroup {
             titleLabel?.text = "Add Group"
             nameLabel?.text = "Group Name"
             descStack.isHidden = true
             createAlertStack.isHidden = false
+        } else if segue == .editGroup {
+            titleLabel?.text = "Edit Group"
+            nameLabel?.text = "Group Name"
+            descStack.isHidden = true
+            guard let identifier = identifier else { return }
+            nameField?.text = identifier.name
+            
         }
     }
     
@@ -75,14 +86,14 @@ class DetailViewController: UIViewController {
         guard let name = nameField.text,
             !name.isEmpty else { return }
         
-        if segue == .item {
+        if segue == .newItem {
             guard let description = descField.text else { return }
             itemController?.create(name: name, description: description)
             
             
             dismiss(animated: true, completion: nil)
             
-        } else if segue == .group {
+        } else if segue == .newGroup {
             guard let newGroup = groupController?.create(name: name, items: itemsToBeAdded) else { fatalError() }
             
             if createAlertSwitch.isOn {
@@ -100,15 +111,26 @@ class DetailViewController: UIViewController {
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count:Int?
+        var count:Int = 0
         
+        //Existing Items will always be the same
         if tableView == self.existingItemsTableView {
             guard let itemsInController = itemController else { fatalError() }
             count = itemsInController.items.count
-        } else if tableView == self.addedTableView {
-            count = itemsToBeAdded.count
         }
-        return count! // If this wasn't updated, break the app.
+        
+        // Top Table View will vary depending on segue hit
+        
+        if tableView == self.addedTableView {
+            if segue == .newGroup {
+                count = itemsToBeAdded.count
+            } else if segue == .editGroup {
+                guard let group = self.identifier as? Group else { fatalError() }
+                count = group.items.count
+            }
+        }
+        
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -116,18 +138,23 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         var cell: UITableViewCell?
         
         if tableView == self.existingItemsTableView {
-            
         guard let existingCells = tableView.dequeueReusableCell(withIdentifier: "ExistingItemsCell") as? ExistingItemsTableViewCell else { fatalError("Error Casting existing items cells.") }
             
             existingCells.item = itemController.items[indexPath.row]
             cell = existingCells
             
-        } else if tableView == self.addedTableView {
-            
+        } else if tableView == self.addedTableView { // Added Table View functionality
             guard let addedCells = tableView.dequeueReusableCell(withIdentifier: "AddedItemsCell") as? AddedItemsTableViewCell else { fatalError("Error Casting Added items Cells") }
             
-            addedCells.item = itemsToBeAdded[indexPath.row]
-            cell = addedCells
+            if segue == .newGroup {
+                addedCells.item = itemsToBeAdded[indexPath.row]
+                cell = addedCells
+            } else if segue == .editGroup {
+                guard let identifier = self.identifier as? Group else { fatalError() }
+                addedCells.identifier = identifier.items[indexPath.row]
+                cell = addedCells
+            }
+            
         }
         return cell! // If this doesn't update, break app.
     }

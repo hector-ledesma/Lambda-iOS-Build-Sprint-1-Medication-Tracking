@@ -14,7 +14,13 @@ class AddedItemsTableViewCell: UITableViewCell {
     
     var item: Item? {
         didSet {
-            updateView()
+            createView()
+        }
+    }
+    
+    var identifier: Identifier? {
+        didSet {
+            editView()
         }
     }
     
@@ -29,9 +35,14 @@ class AddedItemsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateView() {
+    func createView() {
         guard let item = item else { return }
         itemNameLabel.text = item.name
+    }
+    
+    func editView() {
+        guard let identifier = identifier else { return }
+        itemNameLabel.text = identifier.name
     }
 
 }

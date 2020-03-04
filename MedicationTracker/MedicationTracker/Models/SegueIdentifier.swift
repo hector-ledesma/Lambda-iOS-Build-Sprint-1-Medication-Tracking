@@ -9,8 +9,8 @@
 import Foundation
 
 enum SegueIdentifier {
-    case item
-    case group
+    case newItem
+    case newGroup
     case editItem
     case editGroup
 }

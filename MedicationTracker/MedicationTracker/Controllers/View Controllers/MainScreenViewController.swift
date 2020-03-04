@@ -50,7 +50,19 @@ class MainScreenViewController: UIViewController {
             mainMenuVC.itemController = self.itemController
             mainMenuVC.groupController = self.groupController
             mainMenuVC.alertManager = self.alertManager
+        } else if segue.identifier == "EditItemSegue" {
+            guard let editVC = segue.destination as? DetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { fatalError("Segue to MainMenu failed.") }
+            
+            editVC.dayController = self.dayController
+            editVC.itemController = self.itemController
+            editVC.groupController = self.groupController
+            editVC.alertManager = self.alertManager
+            editVC.identifier = alertManager.activeAlerts[indexPath.row].identifier
+            editVC.segue = .editGroup
+            
         }
+        
         
     }
     
