@@ -43,8 +43,6 @@ class DetailViewController: UIViewController {
         addedTableView.dataSource = self
         existingItemsTableView.delegate = self
         existingItemsTableView.dataSource = self
-        
-        print(self.itemController)
 
         // Do any additional setup after loading the view.
     }
@@ -66,9 +64,14 @@ class DetailViewController: UIViewController {
     @IBAction func addItemTapped(_ sender: Any) {
     }
     @IBAction func saveTappeed(_ sender: Any) {
+        guard let name = nameField.text,
+            !name.isEmpty else { return }
+        
+        if segue == "Group" {
+            groupController?.create(name: name, items: itemsToBeAdded)
+            dismiss(animated: true, completion: nil)
+        }
     }
-    
-
 }
 
 
