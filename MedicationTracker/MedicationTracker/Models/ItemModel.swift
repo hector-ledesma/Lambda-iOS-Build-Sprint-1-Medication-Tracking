@@ -8,7 +8,9 @@
 
 import Foundation
 
-class Item: Identifier {
+class Item: Identifier, Equatable {
+    
+    
     var name: String
     var status: Status
     var description: String
@@ -20,6 +22,10 @@ class Item: Identifier {
         self.status = .standby
         self.description = description
         self.photoData = photoData
+    }
+    
+    static func == (lhs: Item, rhs: Item) -> Bool {
+        return lhs.name == rhs.name
     }
     
 }

@@ -48,17 +48,7 @@ class DetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func updateView() {
         guard let segue = segue else { return }
@@ -103,14 +93,36 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         var cell: UITableViewCell?
         
         if tableView == self.existingItemsTableView {
+            
         guard let existingCells = tableView.dequeueReusableCell(withIdentifier: "ExistingItemsCell") as? ExistingItemsTableViewCell else { fatalError("Error Casting existing items cells.") }
+            
             existingCells.item = itemController.items[indexPath.row]
             cell = existingCells
+            
         } else if tableView == self.addedTableView {
-            guard let addedCells = tableView.dequeueReusableCell(withIdentifier: "AddedItemsCells") else { fatalError("Error Casting Added items Cells") }
+            
+            guard let addedCells = tableView.dequeueReusableCell(withIdentifier: "AddedItemsCell") as? AddedItemsTableViewCell else { fatalError("Error Casting Added items Cells") }
+            
+            addedCells.item = itemsToBeAdded[indexPath.row]
             cell = addedCells
         }
         return cell! // If this doesn't update, break app.
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == self.existingItemsTableView {
+            guard let itemController = itemController else { fatalError() }
+            
+            let item = itemController.items[indexPath.row]
+            for items in itemsToBeAdded {
+                if item == items {
+                    print("Item already exists")
+                    return
+                }
+            }
+            itemsToBeAdded.append(item)
+            self.addedTableView.reloadData()
+        }
     }
     
     
