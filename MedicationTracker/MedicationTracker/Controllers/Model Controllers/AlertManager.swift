@@ -10,6 +10,12 @@ import Foundation
 
 class AlertManager {
     var alerts: [Alert] = []
+    var activeAlerts: [Alert] {
+        get {
+            let activeAlerts: [Alert] = alerts.filter { $0.isActive }
+            return activeAlerts
+        }
+    }
     
     func createAlert(identifier: Identifier) {
         let newAlert = Alert(item: identifier)

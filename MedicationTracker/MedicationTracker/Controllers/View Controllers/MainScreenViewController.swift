@@ -74,13 +74,15 @@ class MainScreenViewController: UIViewController {
 extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groupController.groups.count
+//        return groupController.groups.count
+        
+        return alertManager.activeAlerts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "mainViewCell") as? MainScreenTableViewCell else { fatalError("Could not convert items to cells") }
         
-        cell.identifier = groupController.groups[indexPath.row]
+        cell.identifier = alertManager.activeAlerts[indexPath.row].identifier
         
         
         return cell
