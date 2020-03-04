@@ -10,10 +10,10 @@ import UIKit
 
 class MainScreenViewController: UIViewController {
     
-    let dayController = DayController()
-    let itemController = ItemController()
-    let groupController = GroupController()
-    let alertManager = AlertManager()
+    var dayController = DayController()
+    var itemController = ItemController()
+    var groupController = GroupController()
+    var alertManager = AlertManager()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,7 +31,7 @@ class MainScreenViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "MainScreenViewController.swift" {
+        if segue.identifier == "MainMenuSegue" {
             guard let mainMenuVC = segue.destination as? MainMenuViewController else { fatalError("Segue to MainMenu failed.") }
             
             mainMenuVC.dayController = self.dayController

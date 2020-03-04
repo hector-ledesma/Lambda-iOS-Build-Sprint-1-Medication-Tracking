@@ -27,9 +27,8 @@ class MainMenuViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "AddItemSegue" || segue.identifier == "CreateGroupSegue" {
+        if  segue.identifier == "AddItemSegue" || segue.identifier == "CreateGroupSegue" {
             guard let detailVC = segue.destination as? DetailViewController else { fatalError("Failed Segue from main menu to Detail View" ) }
-            
             detailVC.dayController = self.dayController
             detailVC.itemController = self.itemController
             detailVC.groupController = self.groupController
