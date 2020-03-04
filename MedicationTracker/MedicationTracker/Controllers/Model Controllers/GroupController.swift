@@ -11,8 +11,7 @@ import Foundation
 class GroupController {
     var groups: [Group] = []
     
-    func create() {
-        
+    func create(name: String, items: [Item]) {
     }
     
     func newAlerts() {

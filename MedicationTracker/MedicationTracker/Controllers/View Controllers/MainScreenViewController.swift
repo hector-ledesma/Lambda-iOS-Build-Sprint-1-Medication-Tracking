@@ -9,10 +9,23 @@
 import UIKit
 
 class MainScreenViewController: UIViewController {
+    
+    let dayController = DayController()
+    let itemController = ItemController()
+    let groupController = GroupController()
+    let alertManager = AlertManager()
+    
+    let item1: Item = Item(name: "Vitamin D", description: "PRAISE THE SUN")
+    let item2: Item = Item(name: "Iron", description: "STEEL RESOLVE")
+    
+    @IBOutlet weak var tableView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -27,4 +40,20 @@ class MainScreenViewController: UIViewController {
     }
     */
 
+}
+
+
+// MARK: - Table View Methods
+
+extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
 }
