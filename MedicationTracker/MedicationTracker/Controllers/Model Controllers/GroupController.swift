@@ -9,7 +9,8 @@
 import Foundation
 
 class GroupController {
-    var groups: [Group] = [Group(name: "Group A", items: [Item(name: "Vitamin D", description: "PRAISE THE SUN"), Item(name: "Iron", description: "STEEL RESOLVE")])]
+//    var groups: [Group] = [Group(name: "Group A", items: [Item(name: "Vitamin D", description: "PRAISE THE SUN"), Item(name: "Iron", description: "STEEL RESOLVE")])]
+    var groups: [Group] = []
     
     func create(name: String, items: [Item]) -> Identifier {
         var newGroup = Group(name: name, items: items)
@@ -32,5 +33,45 @@ class GroupController {
     
     func muteAlerts() {
         
+    }
+    
+    // MARK: - Data Permanence Functionality
+    var medicationTrackerURL: URL? {
+    get {
+        let fileManager = FileManager.default
+        guard let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        let plistFile = documentsDir.appendingPathComponent("MedicineTracker.plist")
+        
+        return plistFile
+        
+        }
+    }
+    
+    func saveToPersistentStore() {
+        
+        guard let plistURL = medicationTrackerURL else { return }
+        let propertyList = PropertyListEncoder()
+        
+        do {
+            let groupsData = try propertyList.encode(groups)
+            try groupsData.write(to: plistURL)
+            print("Saved groups: \(groups)")
+        } catch {
+            print("Error Groups Items: \(error)")
+        }
+    }
+    
+    func loadFromPersistentStore() {
+        do {
+            guard let plistURL = medicationTrackerURL else { return }
+            let groupData = try Data(contentsOf: plistURL)
+            let plistDecoder = PropertyListDecoder()
+            let decodedGroups = try plistDecoder.decode([Group].self , from: groupData)
+            groups = decodedGroups
+            print("Loaded groups: \(groups)")
+            
+        } catch {
+            print("Failed to load decoded Groups array: \(error)")
+        }
     }
 }

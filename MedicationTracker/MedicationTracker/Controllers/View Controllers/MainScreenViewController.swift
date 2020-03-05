@@ -35,6 +35,9 @@ class MainScreenViewController: UIViewController {
                 print("Alert for \(alerts.group?.name) is active.")
             }
         }
+//        updateAll()
+        itemController.loadFromPersistentStore()
+        groupController.loadFromPersistentStore()
         
     }
     
@@ -100,4 +103,18 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
   
+}
+
+
+// MARK: - Permanence Methods
+extension MainScreenViewController{
+    
+    func updateAll() {
+        itemController.saveToPersistentStore()
+        groupController.saveToPersistentStore()
+        alertManager.saveToPersistentStore()
+        itemController.loadFromPersistentStore()
+        groupController.loadFromPersistentStore()
+        alertManager.loadFromPersistentStore()
+    }
 }

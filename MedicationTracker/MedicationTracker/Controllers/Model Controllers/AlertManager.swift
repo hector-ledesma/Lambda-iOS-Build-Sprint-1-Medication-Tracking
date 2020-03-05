@@ -32,4 +32,42 @@ class AlertManager {
         }
         return false
     }
+    
+    // MARK: - Data Permanence Functionality
+    var medicationTrackerURL: URL? {
+    get {
+        let fileManager = FileManager.default
+        guard let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        let plistFile = documentsDir.appendingPathComponent("MedicineTracker.plist")
+        
+        return plistFile
+        
+        }
+    }
+    
+    func saveToPersistentStore() {
+        
+        guard let plistURL = medicationTrackerURL else { return }
+        let propertyList = PropertyListEncoder()
+        
+        do {
+            let alertsData = try propertyList.encode(alerts)
+            try alertsData.write(to: plistURL)
+        } catch {
+            print("Error encoding Alerts: \(error)")
+        }
+    }
+    
+    func loadFromPersistentStore() {
+        do {
+            guard let plistURL = medicationTrackerURL else { return }
+            let data = try Data(contentsOf: plistURL)
+            let plistDecoder = PropertyListDecoder()
+            let decodedAlerts = try plistDecoder.decode([Alert].self , from: data)
+            alerts = decodedAlerts
+            
+        } catch {
+            print("Failed to load decoded Alerts array: \(error)")
+        }
+    }
 }

@@ -98,7 +98,7 @@ class DetailViewController: UIViewController {
             guard let description = descField.text else { return }
             itemController?.create(name: name, description: description)
             
-            
+            itemController?.saveToPersistentStore()
             dismiss(animated: true, completion: nil)
             
         } else if segue == .newGroup {
@@ -107,12 +107,13 @@ class DetailViewController: UIViewController {
             if createAlertSwitch.isOn {
                 alertManager?.createAlert(identifier: newGroup)
             }
-            
+            groupController?.saveToPersistentStore()
             dismiss(animated: true, completion: nil)
         } else if segue == .editGroup {
             guard let identifier = identifier else { fatalError() }
             if let _ = alertManager?.deleteAlert(identifier: identifier) {
                 groupController?.delete(group: identifier as! Group)
+                updateAll()
                 dismiss(animated: true, completion: nil)
             }
         }
@@ -221,6 +222,19 @@ extension DetailViewController: UITextFieldDelegate {
         if segue! == .editGroup {
             guard let identifier = self.identifier as? Group else { fatalError() }
             identifier.name = sender.text ?? "ERROR WEE WOO"
+            updateAll()
         }
+    }
+}
+
+extension DetailViewController {
+    func updateAll() {
+//        itemController?.saveToPersistentStore()
+//        groupController?.saveToPersistentStore()
+//        alertManager?.saveToPersistentStore()
+        
+//        itemController?.loadFromPersistentStore()
+//        groupController?.loadFromPersistentStore()
+//        alertManager?.loadFromPersistentStore()
     }
 }
