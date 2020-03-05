@@ -35,8 +35,7 @@ class MainScreenViewController: UIViewController {
                 print("Alert for \(alerts.group!.name) is active.")
             }
         }
-//        updateAll()
-        itemController.loadFromPersistentStore()
+        updateAll()
         
     }
     

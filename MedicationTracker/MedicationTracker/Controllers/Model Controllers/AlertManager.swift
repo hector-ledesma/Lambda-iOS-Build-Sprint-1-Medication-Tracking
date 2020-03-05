@@ -47,7 +47,7 @@ class AlertManager {
     get {
         let fileManager = FileManager.default
         guard let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
-        let plistFile = documentsDir.appendingPathComponent("MedicineTracker.plist")
+        let plistFile = documentsDir.appendingPathComponent("AlertsTracker.plist")
         
         return plistFile
         

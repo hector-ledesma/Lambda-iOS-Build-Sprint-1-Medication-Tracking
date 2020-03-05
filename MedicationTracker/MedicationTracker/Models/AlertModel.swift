@@ -20,7 +20,7 @@ class Alert: Equatable, Codable {
             if isActive {
                 group!.status = .standby
             } else {
-                group!.status = .cancelled
+                group!.status = .done
             }
         }
     }
