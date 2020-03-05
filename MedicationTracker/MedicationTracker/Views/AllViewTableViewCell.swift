@@ -9,7 +9,12 @@
 import UIKit
 
 class AllViewTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var itemsNameLabel: UILabel!
+    
+    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var groupCountLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +26,6 @@ class AllViewTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func itemDelete(_ sender: UIButton) {
+    }
 }

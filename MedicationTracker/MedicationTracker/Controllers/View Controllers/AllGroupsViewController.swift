@@ -10,6 +10,8 @@ import UIKit
 
 class AllGroupsViewController: UIViewController {
 
+    @IBOutlet weak var allGroupsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

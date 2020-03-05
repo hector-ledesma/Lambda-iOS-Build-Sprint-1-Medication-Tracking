@@ -10,6 +10,8 @@ import UIKit
 
 class AllItemsViewController: UIViewController {
 
+    @IBOutlet weak var allItemsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
