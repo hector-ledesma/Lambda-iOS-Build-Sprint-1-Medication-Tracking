@@ -13,8 +13,18 @@ class Group: Identifier, Equatable, Codable {
     var name: String
     var status: Status {
         didSet {
-            print("Come on now")
-            muteAlerts()
+            switch status {
+            case .done:
+                muteAlerts()
+            case .cancelled:
+                print("cancelled")
+            case .standby:
+                for alert in alerts {
+                    alert.createAlerts()
+                }
+            case .skipped:
+                print("You shouldn't be here")
+            }
         }
     }
     var items: [Item]
