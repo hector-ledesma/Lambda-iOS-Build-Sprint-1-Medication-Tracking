@@ -37,7 +37,6 @@ class MainScreenViewController: UIViewController {
         }
 //        updateAll()
         itemController.loadFromPersistentStore()
-        groupController.loadFromPersistentStore()
         
     }
     

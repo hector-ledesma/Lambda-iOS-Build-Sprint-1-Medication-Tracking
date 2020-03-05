@@ -470,6 +470,7 @@
                                         <connections>
                                             <outlet property="groupCountLabel" destination="AwQ-DQ-dpX" id="4DN-vb-oMP"/>
                                             <outlet property="groupNameLabel" destination="WQs-0d-IeX" id="jWN-kA-MpF"/>
+                                            <outlet property="statusButton" destination="6eM-iv-Ujh" id="4m3-He-TYK"/>
                                             <segue destination="qqo-Dz-ADA" kind="presentation" identifier="EditItemSegue" id="dgG-66-XLV"/>
                                         </connections>
                                     </tableViewCell>

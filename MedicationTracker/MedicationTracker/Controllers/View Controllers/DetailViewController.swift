@@ -107,7 +107,6 @@ class DetailViewController: UIViewController {
             if createAlertSwitch.isOn {
                 alertManager?.createAlert(identifier: newGroup)
             }
-            groupController?.saveToPersistentStore()
             dismiss(animated: true, completion: nil)
         } else if segue == .editGroup {
             guard let identifier = identifier else { fatalError() }
