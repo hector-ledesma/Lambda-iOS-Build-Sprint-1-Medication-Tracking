@@ -26,7 +26,7 @@ class ItemController: Codable {
     get {
         let fileManager = FileManager.default
         guard let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
-        let plistFile = documentsDir.appendingPathComponent("ItemTracker.plist")
+        let plistFile = documentsDir.appendingPathComponent("ItemsTracker.plist")
         
         return plistFile
         

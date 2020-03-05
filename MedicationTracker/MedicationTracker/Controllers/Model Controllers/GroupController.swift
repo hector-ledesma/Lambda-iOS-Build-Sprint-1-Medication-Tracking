@@ -50,7 +50,7 @@ class GroupController: Codable {
     get {
         let fileManager = FileManager.default
         guard let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
-        let plistFile = documentsDir.appendingPathComponent("GroupTracker.plist")
+        let plistFile = documentsDir.appendingPathComponent("GroupsTracker.plist")
         
         return plistFile
         
