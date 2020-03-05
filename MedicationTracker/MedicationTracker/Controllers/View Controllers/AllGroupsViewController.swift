@@ -8,16 +8,36 @@
 
 import UIKit
 
-class AllGroupsViewController: UIViewController {
+class AllGroupsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var allGroupsTableView: UITableView!
     
+    var groupController = GroupController.groupController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        allGroupsTableView.delegate = self
+        allGroupsTableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        allGroupsTableView.reloadData()
+        print(groupController.groups.count)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return groupController.groups.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AllGroupsIdentifier") as? AllViewTableViewCell else { fatalError() }
+        cell.groupNameLabel.text = groupController.groups[indexPath.row].name
+        cell.groupCountLabel.text = "\(groupController.groups[indexPath.row].items.count) items"
+        return cell
+    }
 
     /*
     // MARK: - Navigation
