@@ -10,10 +10,10 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
     
-    var dayController: DayController?
-    var itemController: ItemController?
+//    var dayController: DayController?
+    var itemController = ItemController.itemController
     var alertManager = AlertManager.alertManager
-    var groupController: GroupController?
+    var groupController = GroupController.groupController
     
     
     override func viewDidLoad() {
@@ -29,7 +29,8 @@ class MainMenuViewController: UIViewController {
         
         if  segue.identifier == "AddItemSegue" || segue.identifier == "CreateGroupSegue" {
             guard let detailVC = segue.destination as? DetailViewController else { fatalError("Failed Segue from main menu to Detail View" ) }
-            detailVC.dayController = self.dayController
+            // FIXME: Delete2
+//            detailVC.dayController = self.dayController
             detailVC.itemController = self.itemController
             detailVC.groupController = self.groupController
             
@@ -44,7 +45,8 @@ class MainMenuViewController: UIViewController {
             
         } else if segue.identifier == "ReminderSegue" {
             guard let alertsVC = segue.destination as? RemindersViewController else { fatalError("Failed Segue from main menu to Detail View" ) }
-            alertsVC.dayController = self.dayController
+            // FIXME: Delete
+//            alertsVC.dayController = self.dayController
             alertsVC.itemController = self.itemController
             alertsVC.groupController = self.groupController
             

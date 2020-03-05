@@ -12,9 +12,8 @@ class RemindersViewController: UIViewController {
 
     @IBOutlet weak var remindersTableView: UITableView!
     
-    var dayController: DayController?
-    var itemController: ItemController?
-    var groupController: GroupController?
+    var itemController = ItemController.itemController
+    var groupController = GroupController.groupController
     var alertManager = AlertManager.alertManager
     
     override func viewDidLoad() {
@@ -24,17 +23,6 @@ class RemindersViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

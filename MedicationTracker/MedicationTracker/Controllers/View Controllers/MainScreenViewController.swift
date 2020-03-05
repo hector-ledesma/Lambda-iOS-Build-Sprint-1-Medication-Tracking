@@ -12,9 +12,9 @@ import UserNotifications
 class MainScreenViewController: UIViewController {
     
     var dayController = DayController()
-    var itemController = ItemController()
+    var itemController = ItemController.itemController
     var alertManager = AlertManager.alertManager
-    var groupController = GroupController()
+    var groupController = GroupController.groupController
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -46,17 +46,17 @@ class MainScreenViewController: UIViewController {
         
         if segue.identifier == "MainMenuSegue" {
             guard let mainMenuVC = segue.destination as? MainMenuViewController else { fatalError("Segue to MainMenu failed.") }
-            
-            mainMenuVC.dayController = self.dayController
-            mainMenuVC.itemController = self.itemController
-            mainMenuVC.groupController = self.groupController
+            // MARK: - fix this
+//            mainMenuVC.dayController = self.dayController
+//            mainMenuVC.itemController = self.itemController
+//            mainMenuVC.groupController = self.groupController
         } else if segue.identifier == "EditItemSegue" {
             guard let editVC = segue.destination as? DetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { fatalError("Segue to MainMenu failed.") }
-            
-            editVC.dayController = self.dayController
-            editVC.itemController = self.itemController
-            editVC.groupController = self.groupController
+            //MARK: - Fix this
+//            editVC.dayController = self.dayController
+//            editVC.itemController = self.itemController
+//            editVC.groupController = self.groupController
             editVC.identifier = alertManager.activeAlerts[indexPath.row].group
             editVC.segue = .editGroup
             

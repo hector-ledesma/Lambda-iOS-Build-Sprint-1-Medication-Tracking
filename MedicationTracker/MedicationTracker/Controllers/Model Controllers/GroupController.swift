@@ -10,6 +10,8 @@ import Foundation
 
 class GroupController: Codable {
 //    var groups: [Group] = [Group(name: "Group A", items: [Item(name: "Vitamin D", description: "PRAISE THE SUN"), Item(name: "Iron", description: "STEEL RESOLVE")])]
+    
+    static var groupController = GroupController()
     var groups: [Group] = []
     
     func create(name: String, items: [Item]) -> Group {
