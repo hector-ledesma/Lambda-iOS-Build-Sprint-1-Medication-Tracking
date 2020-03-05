@@ -8,7 +8,15 @@
 
 import Foundation
 
-enum Status {
+enum Status: Codable {
+    init(from decoder: Decoder) throws {
+        <#code#>
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        <#code#>
+    }
+    
     case standby
     case done
     case cancelled

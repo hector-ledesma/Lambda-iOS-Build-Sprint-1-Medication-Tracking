@@ -8,7 +8,9 @@
 
 import Foundation
 
-protocol Identifier {
+protocol Identifier: Decodable, Encodable {
     var name: String { get set }
+    func encode(to encoder: Encoder) throws
+    
 }
 

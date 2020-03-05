@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Group: Identifier, Equatable {
+class Group: Identifier, Equatable, Codable {
     
     var name: String
     var status: Status

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Item: Identifier, Equatable {
+class Item: Identifier, Equatable, Codable {
     
     
     var name: String
