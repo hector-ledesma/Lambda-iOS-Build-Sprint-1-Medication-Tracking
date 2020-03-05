@@ -13,8 +13,8 @@ class MainScreenViewController: UIViewController {
     
     var dayController = DayController()
     var itemController = ItemController()
+    var alertManager = AlertManager.alertManager
     var groupController = GroupController()
-    var alertManager = AlertManager()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -50,7 +50,6 @@ class MainScreenViewController: UIViewController {
             mainMenuVC.dayController = self.dayController
             mainMenuVC.itemController = self.itemController
             mainMenuVC.groupController = self.groupController
-            mainMenuVC.alertManager = self.alertManager
         } else if segue.identifier == "EditItemSegue" {
             guard let editVC = segue.destination as? DetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { fatalError("Segue to MainMenu failed.") }
@@ -58,7 +57,6 @@ class MainScreenViewController: UIViewController {
             editVC.dayController = self.dayController
             editVC.itemController = self.itemController
             editVC.groupController = self.groupController
-            editVC.alertManager = self.alertManager
             editVC.identifier = alertManager.activeAlerts[indexPath.row].group
             editVC.segue = .editGroup
             

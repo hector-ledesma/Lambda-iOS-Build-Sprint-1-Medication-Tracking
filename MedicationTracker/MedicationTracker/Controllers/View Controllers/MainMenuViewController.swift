@@ -12,8 +12,8 @@ class MainMenuViewController: UIViewController {
     
     var dayController: DayController?
     var itemController: ItemController?
+    var alertManager = AlertManager.alertManager
     var groupController: GroupController?
-    var alertManager: AlertManager?
     
     
     override func viewDidLoad() {
@@ -32,7 +32,6 @@ class MainMenuViewController: UIViewController {
             detailVC.dayController = self.dayController
             detailVC.itemController = self.itemController
             detailVC.groupController = self.groupController
-            detailVC.alertManager = self.alertManager
             
             switch segue.identifier {
             case "AddItemSegue":
@@ -48,7 +47,6 @@ class MainMenuViewController: UIViewController {
             alertsVC.dayController = self.dayController
             alertsVC.itemController = self.itemController
             alertsVC.groupController = self.groupController
-            alertsVC.alertManager = self.alertManager
             
         }
         

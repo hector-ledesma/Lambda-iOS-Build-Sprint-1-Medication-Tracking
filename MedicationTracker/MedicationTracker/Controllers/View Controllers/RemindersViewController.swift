@@ -15,7 +15,7 @@ class RemindersViewController: UIViewController {
     var dayController: DayController?
     var itemController: ItemController?
     var groupController: GroupController?
-    var alertManager: AlertManager?
+    var alertManager = AlertManager.alertManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,12 +43,12 @@ class RemindersViewController: UIViewController {
 extension RemindersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return alertManager!.alerts.count
+        return alertManager.alerts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell") as? RemindersTableViewCell else { fatalError() }
-        cell.alert = alertManager!.alerts[indexPath.row]
+        cell.alert = alertManager.alerts[indexPath.row]
         
         return cell
     }

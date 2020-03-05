@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
     var dayController: DayController?
     var itemController: ItemController?
     var groupController: GroupController?
-    var alertManager: AlertManager?
+    var alertManager = AlertManager.alertManager
     var segue: SegueIdentifier?
     
     // Array for new group
@@ -105,7 +105,7 @@ class DetailViewController: UIViewController {
             guard let newGroup = groupController?.create(name: name, items: itemsToBeAdded) else { fatalError() }
             var alert: Alert?
             if createAlertSwitch.isOn {
-                alert = alertManager?.createAlert(identifier: newGroup)
+                alert = alertManager.createAlert(identifier: newGroup)
             }
 //            if let alert = alert {
 //                newGroup.alerts.append(alert)
@@ -116,7 +116,7 @@ class DetailViewController: UIViewController {
             dismiss(animated: true, completion: nil)
         } else if segue == .editGroup {
             guard let identifier = identifier else { fatalError() }
-            if let _ = alertManager?.deleteAlert(identifier: identifier) {
+            if alertManager.deleteAlert(identifier: identifier) {
                 groupController?.delete(group: identifier as! Group)
                 savePersistence()
                 dismiss(animated: true, completion: nil)
@@ -236,12 +236,12 @@ extension DetailViewController {
     func loadPersistence() {
         itemController?.loadFromPersistentStore()
         groupController?.loadFromPersistentStore()
-        alertManager?.loadFromPersistentStore()
+        alertManager.loadFromPersistentStore()
     }
     
     func savePersistence() {
         itemController?.saveToPersistentStore()
-        alertManager?.saveToPersistentStore()
+        alertManager.saveToPersistentStore()
         groupController?.saveToPersistentStore()
     }
 }
