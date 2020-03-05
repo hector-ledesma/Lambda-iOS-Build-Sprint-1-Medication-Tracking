@@ -54,14 +54,23 @@ class Alert: Equatable, Codable {
     // MARK: - Methods
     
     func muteAlert(for alert: Alert) {
+        printAlerts()
+        let center = UNUserNotificationCenter.current()
+        center.removeDeliveredNotifications(withIdentifiers: [alert.group!.name])
+        center.removePendingNotificationRequests(withIdentifiers: [alert.group!.name])
+        printAlerts()
+    }
+    
+    func printAlerts() {
         let center = UNUserNotificationCenter.current()
         center.getPendingNotificationRequests { (notifications) in
             print("Notifications count: \(notifications.count)")
             for item in notifications {
-                print(item.content)
+                print(item.identifier)
             }
         }
     }
+    
     
     // MARK: - Equatable
     

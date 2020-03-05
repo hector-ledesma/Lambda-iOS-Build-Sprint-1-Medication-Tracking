@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 class AlertManager {
     var alerts: [Alert] = []
@@ -31,6 +32,14 @@ class AlertManager {
             }
         }
         return false
+    }
+    
+    
+    func nukeAlerts() {
+        // Will delete ALL notifications. For debugging purposes only
+        let center = UNUserNotificationCenter.current()
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
     }
     
     // MARK: - Data Permanence Functionality
