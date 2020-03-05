@@ -98,23 +98,27 @@ class DetailViewController: UIViewController {
             guard let description = descField.text else { return }
             itemController?.create(name: name, description: description)
             
-            updateAll()
+            savePersistence()
             dismiss(animated: true, completion: nil)
             
         } else if segue == .newGroup {
             guard let newGroup = groupController?.create(name: name, items: itemsToBeAdded) else { fatalError() }
-            
+            var alert: Alert?
             if createAlertSwitch.isOn {
-                alertManager?.createAlert(identifier: newGroup)
-                groupController?.matchAlertToGroup(match: alertManager!.alerts, to: groupController!.groups)
+                alert = alertManager?.createAlert(identifier: newGroup)
             }
-            updateAll()
+//            if let alert = alert {
+//                newGroup.alerts.append(alert)
+//            }
+            
+            
+            savePersistence()
             dismiss(animated: true, completion: nil)
         } else if segue == .editGroup {
             guard let identifier = identifier else { fatalError() }
             if let _ = alertManager?.deleteAlert(identifier: identifier) {
                 groupController?.delete(group: identifier as! Group)
-                updateAll()
+                savePersistence()
                 dismiss(animated: true, completion: nil)
             }
         }
@@ -223,19 +227,21 @@ extension DetailViewController: UITextFieldDelegate {
         if segue! == .editGroup {
             guard let identifier = self.identifier as? Group else { fatalError() }
             identifier.name = sender.text ?? "ERROR WEE WOO"
-            updateAll()
+            savePersistence()
         }
     }
 }
 
 extension DetailViewController {
-    func updateAll() {
-        itemController?.saveToPersistentStore()
-        groupController?.saveToPersistentStore()
-        alertManager?.saveToPersistentStore()
-        
+    func loadPersistence() {
         itemController?.loadFromPersistentStore()
         groupController?.loadFromPersistentStore()
         alertManager?.loadFromPersistentStore()
+    }
+    
+    func savePersistence() {
+        itemController?.saveToPersistentStore()
+        alertManager?.saveToPersistentStore()
+        groupController?.saveToPersistentStore()
     }
 }

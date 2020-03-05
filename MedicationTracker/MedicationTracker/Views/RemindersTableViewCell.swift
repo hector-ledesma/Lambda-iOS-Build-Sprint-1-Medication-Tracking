@@ -47,7 +47,7 @@ class RemindersTableViewCell: UITableViewCell {
 
     // MARK: - Button Functionality
     @IBAction func isActiveTapped(_ sender: Any) {
-        if let alert = alert {
+        if var alert = alert {
             alert.isActive.toggle()
             print("alert toggle hit: \(alert.isActive)")
             updateViews()

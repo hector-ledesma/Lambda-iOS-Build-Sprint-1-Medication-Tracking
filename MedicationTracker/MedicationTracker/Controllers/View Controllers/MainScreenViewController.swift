@@ -29,13 +29,13 @@ class MainScreenViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        loadPersistence()
         tableView.reloadData()
         for alerts in alertManager.alerts {
             if alerts.isActive {
-                print("Alert for \(alerts.group!.name) is active.")
+//                print("Alert for \(alerts.group!.name) is active.")
             }
         }
-        updateAll()
         
     }
     
@@ -105,12 +105,15 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Permanence Methods
 extension MainScreenViewController{
     
-    func updateAll() {
-        itemController.saveToPersistentStore()
-        groupController.saveToPersistentStore()
-        alertManager.saveToPersistentStore()
+    func loadPersistence() {
         itemController.loadFromPersistentStore()
         groupController.loadFromPersistentStore()
         alertManager.loadFromPersistentStore()
+    }
+    
+    func savePersistence() {
+        itemController.saveToPersistentStore()
+        groupController.saveToPersistentStore()
+        alertManager.saveToPersistentStore()
     }
 }

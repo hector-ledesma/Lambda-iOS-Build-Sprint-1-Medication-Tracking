@@ -8,17 +8,17 @@
 
 import Foundation
 
-class GroupController {
+class GroupController: Codable {
 //    var groups: [Group] = [Group(name: "Group A", items: [Item(name: "Vitamin D", description: "PRAISE THE SUN"), Item(name: "Iron", description: "STEEL RESOLVE")])]
     var groups: [Group] = []
     
-    func create(name: String, items: [Item]) -> Identifier {
+    func create(name: String, items: [Item]) -> Group {
         var newGroup = Group(name: name, items: items)
         self.groups.append(newGroup)
         
         //For the sake of sending the group from the controller as opposed to this temporary instance I'm doing this in a little bit of a convoluted way.
             guard let indexOfNewGroup = self.groups.firstIndex(of: newGroup) else { fatalError() }
-        return self.groups[indexOfNewGroup] as Identifier
+        return self.groups[indexOfNewGroup]
     }
     
     func delete(group: Group) -> Bool {
@@ -35,18 +35,18 @@ class GroupController {
         
     }
     
-    func matchAlertToGroup(match alerts: [Alert], to groups: [Group]) {
-        for alert in alerts {
-            for group in groups {
-                if alert.group?.name == group.name {
-                    group.alerts.append(alert)
-                }
-            }
-        }
-    }
+//    func matchAlertToGroup(match alerts: [Alert], to groups: [Group]) {
+//        for alert in alerts {
+//            for group in groups {
+//                if alert.group?.name == group.name {
+//                    group.alerts.append(alert)
+//                }
+//            }
+//        }
+//    }
     
     // MARK: - Data Permanence Functionality
-    var medicationTrackerURL: URL? {
+    var groupURL: URL? {
     get {
         let fileManager = FileManager.default
         guard let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
@@ -59,7 +59,7 @@ class GroupController {
     
     func saveToPersistentStore() {
         
-        guard let plistURL = medicationTrackerURL else { return }
+        guard let plistURL = groupURL else { return }
         let propertyList = PropertyListEncoder()
         
         do {
@@ -73,7 +73,7 @@ class GroupController {
     
     func loadFromPersistentStore() {
         do {
-            guard let plistURL = medicationTrackerURL else { return }
+            guard let plistURL = groupURL else { return }
             let groupData = try Data(contentsOf: plistURL)
             let plistDecoder = PropertyListDecoder()
             let decodedGroups = try plistDecoder.decode([Group].self , from: groupData)

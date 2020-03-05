@@ -19,7 +19,7 @@ class Group: Identifier, Equatable, Codable {
             case .cancelled:
                 print("cancelled")
             case .standby:
-                for alert in alerts {
+                if let alert = matchingAlert() {
                     alert.createAlerts()
                 }
             case .skipped:
@@ -28,7 +28,7 @@ class Group: Identifier, Equatable, Codable {
         }
     }
     var items: [Item]
-    var alerts: [Alert] = []
+//    var alerts: [Alert] = []
     
     init(name: String, items: [Item]) {
         self.name = name
@@ -40,16 +40,24 @@ class Group: Identifier, Equatable, Codable {
     
     func muteAlerts() {
         print("Outside the for loop")
-        print("Alerts count: \(alerts.count)")
-        for alert in alerts {
-            print("we get here")
-            alert.muteAlert(for: alert)
+        matchingAlert()?.muteAlert()
+    }
+    
+    func matchingAlert() -> Alert? {
+        print("\(AlertManager.alertManager.alerts)")
+        for alert in AlertManager.alertManager.alerts {
+            if alert.group == self {
+                return alert
+            }
         }
+        return nil
     }
     
     // MARK: - Equatable
     
     static func == (lhs: Group, rhs: Group) -> Bool {
-        return lhs.name == rhs.name && lhs.status == rhs.status && lhs.items == rhs.items && lhs.alerts == rhs.alerts
+        return lhs.name == rhs.name && lhs.status == rhs.status && lhs.items == rhs.items
     }
+    
+    
 }

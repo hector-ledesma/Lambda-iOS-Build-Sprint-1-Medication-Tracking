@@ -14,7 +14,7 @@ class Alert: Equatable, Codable {
     
 //    var identifier: Identifier
     var group: Group?
-    var item: Item?
+//    var item: Item?
     var isActive: Bool {
         didSet {
             if isActive {
@@ -61,11 +61,11 @@ class Alert: Equatable, Codable {
     
     // MARK: - Methods
     
-    func muteAlert(for alert: Alert) {
+    func muteAlert() {
         printAlerts()
         let center = UNUserNotificationCenter.current()
-        center.removeDeliveredNotifications(withIdentifiers: [alert.group!.name])
-        center.removePendingNotificationRequests(withIdentifiers: [alert.group!.name])
+        center.removeDeliveredNotifications(withIdentifiers: [self.group!.name])
+        center.removePendingNotificationRequests(withIdentifiers: [self.group!.name])
         printAlerts()
     }
     

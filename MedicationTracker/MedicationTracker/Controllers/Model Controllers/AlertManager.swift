@@ -9,7 +9,10 @@
 import Foundation
 import UserNotifications
 
-class AlertManager {
+class AlertManager: Codable {
+    
+    static var alertManager = AlertManager()
+    
     var alerts: [Alert] = []
     var activeAlerts: [Alert] {
         get {
@@ -18,9 +21,10 @@ class AlertManager {
         }
     }
     
-    func createAlert(identifier: Identifier) {
+    func createAlert(identifier: Identifier) -> Alert? {
         var newAlert = Alert(item: identifier)
         self.alerts.append(newAlert)
+        return newAlert
     }
     
     func deleteAlert(identifier: Identifier) -> Bool {
@@ -43,7 +47,7 @@ class AlertManager {
     }
     
     // MARK: - Data Permanence Functionality
-    var medicationTrackerURL: URL? {
+    var alertURL: URL? {
     get {
         let fileManager = FileManager.default
         guard let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
@@ -56,12 +60,13 @@ class AlertManager {
     
     func saveToPersistentStore() {
         
-        guard let plistURL = medicationTrackerURL else { return }
+        guard let plistURL = alertURL else { return }
         let propertyList = PropertyListEncoder()
         
         do {
             let alertsData = try propertyList.encode(alerts)
             try alertsData.write(to: plistURL)
+            print("Saved alerts array: \(alerts)")
         } catch {
             print("Error encoding Alerts: \(error)")
         }
@@ -69,12 +74,12 @@ class AlertManager {
     
     func loadFromPersistentStore() {
         do {
-            guard let plistURL = medicationTrackerURL else { return }
+            guard let plistURL = alertURL else { return }
             let data = try Data(contentsOf: plistURL)
             let plistDecoder = PropertyListDecoder()
             let decodedAlerts = try plistDecoder.decode([Alert].self , from: data)
             alerts = decodedAlerts
-            
+            print("Loaded alerts array: \(alerts)")
         } catch {
             print("Failed to load decoded Alerts array: \(error)")
         }
