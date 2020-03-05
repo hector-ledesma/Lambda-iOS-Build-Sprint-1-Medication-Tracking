@@ -32,7 +32,7 @@ class MainScreenViewController: UIViewController {
         tableView.reloadData()
         for alerts in alertManager.alerts {
             if alerts.isActive {
-                print("Alert for \(alerts.identifier.name) is active.")
+                print("Alert for \(alerts.group?.name) is active.")
             }
         }
         
@@ -58,7 +58,7 @@ class MainScreenViewController: UIViewController {
             editVC.itemController = self.itemController
             editVC.groupController = self.groupController
             editVC.alertManager = self.alertManager
-            editVC.identifier = alertManager.activeAlerts[indexPath.row].identifier
+            editVC.identifier = alertManager.activeAlerts[indexPath.row].group
             editVC.segue = .editGroup
             
         }
@@ -94,7 +94,7 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "mainViewCell") as? MainScreenTableViewCell else { fatalError("Could not convert items to cells") }
         
-        cell.identifier = alertManager.activeAlerts[indexPath.row].identifier
+        cell.identifier = alertManager.activeAlerts[indexPath.row].group
         
         
         return cell

@@ -38,7 +38,7 @@ class RemindersTableViewCell: UITableViewCell {
     func updateViews() {
         guard let alert = alert else { return }
         
-        identifierLabel.text = alert.identifier.name
+        identifierLabel.text = alert.group?.name
         whenLabel.text = "Daily"
         isActiveButton.setTitle(alert.isActive ? "Active" : "Inactive" , for: .normal)
         
