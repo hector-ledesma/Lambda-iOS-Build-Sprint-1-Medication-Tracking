@@ -32,7 +32,7 @@ class MainScreenViewController: UIViewController {
         tableView.reloadData()
         for alerts in alertManager.alerts {
             if alerts.isActive {
-                print("Alert for \(alerts.group?.name) is active.")
+                print("Alert for \(alerts.group!.name) is active.")
             }
         }
 //        updateAll()

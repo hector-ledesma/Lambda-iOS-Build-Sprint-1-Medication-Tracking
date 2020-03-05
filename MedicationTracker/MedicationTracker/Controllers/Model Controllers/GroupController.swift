@@ -35,6 +35,16 @@ class GroupController {
         
     }
     
+    func matchAlertToGroup(match alerts: [Alert], to groups: [Group]) {
+        for alert in alerts {
+            for group in groups {
+                if alert.group?.name == group.name {
+                    group.alerts.append(alert)
+                }
+            }
+        }
+    }
+    
     // MARK: - Data Permanence Functionality
     var medicationTrackerURL: URL? {
     get {

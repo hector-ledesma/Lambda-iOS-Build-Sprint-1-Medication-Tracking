@@ -11,7 +11,12 @@ import Foundation
 class Group: Identifier, Equatable, Codable {
     
     var name: String
-    var status: Status
+    var status: Status {
+        didSet {
+            print("Come on now")
+            muteAlerts()
+        }
+    }
     var items: [Item]
     var alerts: [Alert] = []
     
@@ -20,6 +25,19 @@ class Group: Identifier, Equatable, Codable {
         self.status = .standby
         self.items = items
     }
+    
+    // MARK: - Methods
+    
+    func muteAlerts() {
+        print("Outside the for loop")
+        print("Alerts count: \(alerts.count)")
+        for alert in alerts {
+            print("we get here")
+            alert.muteAlert(for: alert)
+        }
+    }
+    
+    // MARK: - Equatable
     
     static func == (lhs: Group, rhs: Group) -> Bool {
         return lhs.name == rhs.name && lhs.status == rhs.status && lhs.items == rhs.items && lhs.alerts == rhs.alerts

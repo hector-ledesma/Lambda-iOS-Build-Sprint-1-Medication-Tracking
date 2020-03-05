@@ -106,6 +106,7 @@ class DetailViewController: UIViewController {
             
             if createAlertSwitch.isOn {
                 alertManager?.createAlert(identifier: newGroup)
+                groupController?.matchAlertToGroup(match: alertManager!.alerts, to: groupController!.groups)
             }
             dismiss(animated: true, completion: nil)
         } else if segue == .editGroup {
