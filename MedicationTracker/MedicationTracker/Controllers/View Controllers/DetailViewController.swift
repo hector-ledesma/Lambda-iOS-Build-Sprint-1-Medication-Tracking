@@ -110,7 +110,11 @@ class DetailViewController: UIViewController {
             
             dismiss(animated: true, completion: nil)
         } else if segue == .editGroup {
-            
+            guard let identifier = identifier else { fatalError() }
+            if let _ = alertManager?.deleteAlert(identifier: identifier) {
+                groupController?.delete(group: identifier as! Group)
+                dismiss(animated: true, completion: nil)
+            }
         }
     }
     
@@ -181,15 +185,27 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == self.existingItemsTableView {
             guard let itemController = itemController else { fatalError() }
-            
-            let item = itemController.items[indexPath.row]
-            for items in itemsToBeAdded {
-                if item == items {
-                    print("Item already exists")
-                    return
+            if segue! == .newGroup {
+                let item = itemController.items[indexPath.row]
+                for items in itemsToBeAdded {
+                    if item == items {
+                        print("Item already exists")
+                        return
+                    }
                 }
+                itemsToBeAdded.append(item)
+            } else if segue! == .editGroup {
+                guard let group = identifier as? Group else { fatalError() }
+                let addItem = itemController.items[indexPath.row]
+                for items in group.items {
+                    if items == addItem {
+                        print("Item already exists.")
+                        return
+                    }
+                }
+                group.items.append(addItem)
             }
-            itemsToBeAdded.append(item)
+            
             self.addedTableView.reloadData()
         }
     }

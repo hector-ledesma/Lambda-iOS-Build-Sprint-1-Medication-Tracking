@@ -22,7 +22,14 @@ class AlertManager {
         self.alerts.append(newAlert)
     }
     
-    func deleteAlert(identifier: Identifier) {
-        
+    func deleteAlert(identifier: Identifier) -> Bool {
+        for existingAlert in alerts {
+            if existingAlert.identifier.name == identifier.name {
+                guard let alertToBeDeleted = alerts.firstIndex(of: existingAlert) else { fatalError() }
+                alerts.remove(at: alertToBeDeleted)
+                return true
+            }
+        }
+        return false
     }
 }

@@ -20,9 +20,15 @@ class GroupController {
         return self.groups[indexOfNewGroup] as Identifier
     }
     
-    func newAlerts(identifier: Identifier) {
-        
+    func delete(group: Group) -> Bool {
+        guard let groupToBeDeleted = groups.firstIndex(of: group) else { fatalError() }
+        groups.remove(at: groupToBeDeleted)
+        return true
     }
+    
+    func newAlerts(identifier: Identifier) {
+    }
+    
     
     func muteAlerts() {
         
