@@ -521,7 +521,7 @@
                                     <constraint firstAttribute="height" constant="537" id="2iv-ZI-GAS"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderCell" id="vQj-SJ-1ez" customClass="RemindersTableViewCell" customModule="MedicationTracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderCell" id="vQj-SJ-1ez" customClass="AllViewTableViewCell" customModule="MedicationTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="42.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vQj-SJ-1ez" id="Nxc-qC-lzw">
@@ -559,9 +559,6 @@
                                                 <constraint firstItem="4Ti-LL-cJe" firstAttribute="baseline" secondItem="WI6-qM-HcT" secondAttribute="baseline" id="rKK-SW-7GB"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="isActiveButton" destination="WI6-qM-HcT" id="Sfx-Tf-E8C"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -699,27 +696,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOo-8O-ARd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOo-8O-ARd">
                                 <rect key="frame" x="179" y="179" width="56" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K38-2t-T3R">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K38-2t-T3R">
                                 <rect key="frame" x="0.0" y="276" width="414" height="537"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderCell" id="RBy-gv-GEF" customClass="RemindersTableViewCell" customModule="MedicationTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderCell" id="RBy-gv-GEF" customClass="AllViewTableViewCell" customModule="MedicationTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="42.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RBy-gv-GEF" id="dzF-DO-kpW">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="42.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1J-es-tu0">
-                                                    <rect key="frame" x="31" y="11" width="63" height="22"/>
+                                                    <rect key="frame" x="35" y="11" width="63" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -749,14 +744,19 @@
                                                 <constraint firstItem="c1J-es-tu0" firstAttribute="baseline" secondItem="qDe-vf-0sn" secondAttribute="firstBaseline" id="lPa-oB-Wj6"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="isActiveButton" destination="qDe-vf-0sn" id="UYp-DD-B4E"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uOo-8O-ARd" firstAttribute="centerX" secondItem="S5w-KU-iKT" secondAttribute="centerX" id="Hit-5U-Jww"/>
+                            <constraint firstItem="uOo-8O-ARd" firstAttribute="centerX" secondItem="K38-2t-T3R" secondAttribute="centerX" id="dJq-z8-NB4"/>
+                            <constraint firstItem="uOo-8O-ARd" firstAttribute="top" secondItem="bLM-AA-rCV" secondAttribute="top" constant="91" id="hZ6-xE-Oic"/>
+                            <constraint firstItem="K38-2t-T3R" firstAttribute="top" secondItem="uOo-8O-ARd" secondAttribute="bottom" constant="76" id="hsB-nF-CLF"/>
+                            <constraint firstItem="K38-2t-T3R" firstAttribute="leading" secondItem="bLM-AA-rCV" secondAttribute="leading" id="pV4-lC-aRQ"/>
+                            <constraint firstItem="K38-2t-T3R" firstAttribute="bottom" secondItem="bLM-AA-rCV" secondAttribute="bottom" id="vAr-8D-WYy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bLM-AA-rCV"/>
                     </view>
                     <navigationItem key="navigationItem" id="E31-NM-U0M"/>
