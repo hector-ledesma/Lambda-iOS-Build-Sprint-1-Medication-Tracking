@@ -15,7 +15,15 @@ class Alert: Equatable, Codable {
 //    var identifier: Identifier
     var group: Group?
     var item: Item?
-    var isActive: Bool
+    var isActive: Bool {
+        didSet {
+            if isActive {
+                group!.status = .standby
+            } else {
+                group!.status = .cancelled
+            }
+        }
+    }
     
     init(item: Identifier) {
         if item is Group {

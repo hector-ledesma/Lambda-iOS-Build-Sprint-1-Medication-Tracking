@@ -64,8 +64,6 @@ class MainScreenViewController: UIViewController {
             editVC.segue = .editGroup
             
         }
-        
-        
     }
     
     // MARK: - Notifications Functionality
