@@ -67,7 +67,7 @@ class MainScreenViewController: UIViewController {
 //            editVC.dayController = self.dayController
 //            editVC.itemController = self.itemController
 //            editVC.groupController = self.groupController
-            
+            editVC.delegate = self
             guard let group = alertManager.activeAlerts[indexPath.row].group else { fatalError() }
             if let activeGroupIndex = groupController.groups.firstIndex(of: group){
                     editVC.identifier = groupController.groups[activeGroupIndex]

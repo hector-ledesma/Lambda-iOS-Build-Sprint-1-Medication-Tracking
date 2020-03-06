@@ -63,6 +63,11 @@ class DetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print(delegate)
+        delegate?.tableView.reloadData()
+    }
 
     
     func updateView() {
@@ -224,7 +229,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             self.addedTableView.reloadData()
-            delegate?.updateViews()
         }
     }
     
