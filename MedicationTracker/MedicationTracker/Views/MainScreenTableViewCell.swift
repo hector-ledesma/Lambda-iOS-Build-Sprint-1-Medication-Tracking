@@ -39,7 +39,7 @@ class MainScreenTableViewCell: UITableViewCell {
         let group = GroupController.groupController.groups[groupIndex]
         
         groupNameLabel.text = group.name
-        groupCountLabel.text = "\(group.items.count)"
+        groupCountLabel.text = group.items.count > 1 ? "\(group.items.count) items" : "\(group.items.count) item"
         var status: String
         switch group.status {
         case .standby:
