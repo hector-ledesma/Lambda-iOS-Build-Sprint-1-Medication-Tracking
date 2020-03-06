@@ -45,6 +45,9 @@ class DetailViewController: UIViewController {
     var identifier: Identifier?
     var itemsToBeEdited: [Item] = []
     
+    // Delegate
+    var delegate: MainScreenViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
@@ -116,6 +119,7 @@ class DetailViewController: UIViewController {
             if alertManager.deleteAlert(identifier: identifier) {
                 groupController.delete(group: identifier as! Group)
                 savePersistence()
+                delegate?.updateViews()
                 dismiss(animated: true, completion: nil)
             }
         }
@@ -147,8 +151,10 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             if segue == .newGroup {
                 count = itemsToBeAdded.count
             } else if segue == .editGroup {
-                guard let group = self.identifier as? Group else { fatalError() }
-                count = group.items.count
+                if let group = self.identifier as? Group {
+                    count = group.items.count
+                }
+                
             }
         }
         
@@ -173,13 +179,16 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 cell = addedCells
             } else if segue == .editGroup {
                 guard let identifier = self.identifier as? Group else { fatalError() }
-                let item = identifier.items[indexPath.row]
+                guard let groupFind = groupController.groups.firstIndex(of: identifier) else { fatalError() }
+                let group = groupController.groups[groupFind]
+                let item = group.items[indexPath.row]
                 addedCells.identifier = item
-                
                 addedCells.buttonAction = { sender in
-                    guard let indexToBeDeleted = identifier.items.firstIndex(of: item) else { fatalError() }
-                            identifier.items.remove(at: indexToBeDeleted)
-                            self.addedTableView.reloadData()
+                    guard let itemDeleteIndex = group.items.firstIndex(of: item) else { fatalError() }
+                    group.items.remove(at: itemDeleteIndex)
+                    self.savePersistence()
+                    self.loadPersistence()
+                    self.addedTableView.reloadData()
                 }
                 
                 cell = addedCells
@@ -211,9 +220,11 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                     }
                 }
                 group.items.append(addItem)
+                savePersistence()
             }
             
             self.addedTableView.reloadData()
+            delegate?.updateViews()
         }
     }
     
@@ -238,6 +249,14 @@ extension DetailViewController {
         itemController.loadFromPersistentStore()
         groupController.loadFromPersistentStore()
         alertManager.loadFromPersistentStore()
+        
+        for group in groupController.groups {
+            for alert in alertManager.alerts {
+                if alert.group?.name == group.name {
+                    alert.group = group
+                }
+            }
+        }
     }
     
     func savePersistence() {

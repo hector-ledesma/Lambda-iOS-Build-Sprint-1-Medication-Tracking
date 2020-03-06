@@ -50,10 +50,24 @@ class RemindersTableViewCell: UITableViewCell {
         if var alert = alert {
             alert.isActive.toggle()
             print("alert toggle hit: \(alert.isActive)")
+            savePersistence()
             updateViews()
         }
     }
     
     
-    
+    func savePersistence() {
+        ItemController.itemController.saveToPersistentStore()
+        GroupController.groupController.saveToPersistentStore()
+        AlertManager.alertManager.saveToPersistentStore()
+        
+//        for group in GroupController.groupController.groups {
+//            for alert in AlertManager.alertManager.alerts {
+//                if alert.group?.name == group.name {
+//                    alert.group = group
+//                }
+//            }
+//        }
+        
+    }
 }

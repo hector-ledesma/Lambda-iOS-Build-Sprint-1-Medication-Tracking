@@ -16,7 +16,7 @@ class AlertManager: Codable {
     var alerts: [Alert] = []
     var activeAlerts: [Alert] {
         get {
-            let activeAlerts: [Alert] = alerts.filter { $0.isActive }
+            var activeAlerts: [Alert] = alerts.filter { $0.isActive }
             return activeAlerts
         }
     }

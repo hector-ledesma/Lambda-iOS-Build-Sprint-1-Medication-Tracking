@@ -15,7 +15,7 @@ class MainScreenTableViewCell: UITableViewCell {
     @IBOutlet weak var statusButton: UIButton!
     
     
-    var identifier: Identifier? {
+    var identifier: Group? {
         didSet {
             updateView()
         }
@@ -24,6 +24,7 @@ class MainScreenTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        updateView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,11 +34,14 @@ class MainScreenTableViewCell: UITableViewCell {
     }
     
     func updateView() {
-        guard let item = identifier as? Group else { return }
-        groupNameLabel.text = item.name
-        groupCountLabel.text = String(item.items.count)
+        guard let identifier = identifier else { return }
+        guard let groupIndex = GroupController.groupController.groups.firstIndex(of: identifier) else {return}
+        let group = GroupController.groupController.groups[groupIndex]
+        
+        groupNameLabel.text = group.name
+        groupCountLabel.text = "\(group.items.count)"
         var status: String
-        switch item.status {
+        switch group.status {
         case .standby:
             status = "Waiting"
         case .done:

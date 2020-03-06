@@ -30,11 +30,21 @@ class MainScreenViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         loadPersistence()
+//        var group10name = groupController.groups[10].name
+//        let alertgroups = alertManager.alerts.compactMap { $0.group }
+//        if let otherGroup = alertgroups.first(where: {
+//            $0.name == group10name
+//        }) {
+//            groupController.groups[10] = otherGroup
+//        }
+        
         tableView.reloadData()
-        for alerts in alertManager.alerts {
-            if alerts.isActive {
-//                print("Alert for \(alerts.group!.name) is active.")
-            }
+        
+        for groups in groupController.groups {
+            print("All in group: \(groups.name) with count of \(groups.items.count)")
+        }
+        for alerts in alertManager.activeAlerts {
+            print("Count: \(alertManager.activeAlerts.count) All in active alerts: \(alerts.group?.name) with count of \(alerts.group?.items.count)")
         }
         
     }
@@ -57,7 +67,12 @@ class MainScreenViewController: UIViewController {
 //            editVC.dayController = self.dayController
 //            editVC.itemController = self.itemController
 //            editVC.groupController = self.groupController
-            editVC.identifier = alertManager.activeAlerts[indexPath.row].group
+            
+            guard let group = alertManager.activeAlerts[indexPath.row].group else { fatalError() }
+            if let activeGroupIndex = groupController.groups.firstIndex(of: group){
+                    editVC.identifier = groupController.groups[activeGroupIndex]
+            }
+            
             editVC.segue = .editGroup
             
         }
@@ -90,8 +105,21 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "mainViewCell") as? MainScreenTableViewCell else { fatalError("Could not convert items to cells") }
+//        let activeAlert = alertManager.activeAlerts[indexPath.row]
         
-        cell.identifier = alertManager.activeAlerts[indexPath.row].group
+        guard var group = alertManager.activeAlerts[indexPath.row].group else {fatalError()}
+//        guard let group = groupController.groups.first(where: { $0 == groupFromAlert }) else { fatalError()}
+        
+            cell.identifier = group
+        
+        
+        
+//        guard let group = alertManager.activeAlerts[indexPath.row].group else { fatalError() }
+//        if let activeGroupIndex = groupController.groups.firstIndex(of: group) {
+//            cell.identifier = groupController.groups[activeGroupIndex]
+//        }
+        
+//        cell.identifier = alertManager.activeAlerts[indexPath.row].group
         
         
         return cell
@@ -107,11 +135,28 @@ extension MainScreenViewController{
         itemController.loadFromPersistentStore()
         groupController.loadFromPersistentStore()
         alertManager.loadFromPersistentStore()
+        
+        for group in groupController.groups {
+            for alert in alertManager.alerts {
+                if alert.group?.name == group.name {
+                    alert.group = group
+                }
+            }
+        }
+        
     }
     
     func savePersistence() {
         itemController.saveToPersistentStore()
         groupController.saveToPersistentStore()
         alertManager.saveToPersistentStore()
+    }
+}
+
+// MARK: - Delegate Methods
+
+extension MainScreenViewController {
+    func updateViews() {
+        tableView.reloadData()
     }
 }

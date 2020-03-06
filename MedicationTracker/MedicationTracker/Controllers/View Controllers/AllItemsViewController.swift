@@ -23,6 +23,7 @@ class AllItemsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        itemController.loadFromPersistentStore()
         allItemsTableView.reloadData()
     }
     
@@ -33,6 +34,13 @@ class AllItemsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AllltemsCell") as? AllViewTableViewCell else { fatalError() }
         cell.itemsNameLabel.text = itemController.items[indexPath.row].name
+        cell.buttonAction = { (cell) in
+            guard let deleteItemIndex = self.itemController.items.firstIndex(of: self.itemController.items[indexPath.row]) else { fatalError() }
+            self.itemController.items.remove(at: deleteItemIndex)
+            self.itemController.saveToPersistentStore()
+            self.allItemsTableView.reloadData()
+        }
+        
         return cell
     }
     
@@ -43,8 +51,12 @@ class AllItemsViewController: UIViewController, UITableViewDelegate, UITableView
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        // Pass the selected object to the new controller.
     }
     */
+    
+    
+
+
 
 }

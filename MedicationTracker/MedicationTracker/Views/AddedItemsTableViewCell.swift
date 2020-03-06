@@ -19,7 +19,7 @@ class AddedItemsTableViewCell: UITableViewCell {
         }
     }
     
-    var identifier: Identifier? {
+    var identifier: Item? {
         didSet {
             editView()
         }
@@ -43,7 +43,7 @@ class AddedItemsTableViewCell: UITableViewCell {
     }
     
     func editView() {
-        guard let identifier = identifier as? Item else {  return }
+        guard let identifier = identifier else {  return }
         itemNameLabel.text = identifier.name
         deleteItemButton.isHidden = false
     }
