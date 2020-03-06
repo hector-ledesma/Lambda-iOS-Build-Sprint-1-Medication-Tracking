@@ -22,6 +22,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descStack: UIStackView!
     
     @IBOutlet weak var itemsLabel: UILabel!
+    @IBOutlet weak var items2Label: UILabel!
     @IBOutlet weak var addedTableView: UITableView!
     @IBOutlet weak var existingItemsTableView: UITableView!
     @IBOutlet weak var itemsStack: UIStackView!
@@ -75,17 +76,24 @@ class DetailViewController: UIViewController {
         if segue == .newItem {
             titleLabel?.text = "Add Item"
             nameLabel?.text = "Item Name"
-            itemsStack.isHidden = true
+//            itemsStack.isHidden = true
+            addedTableView.isHidden = true
+            existingItemsTableView.isHidden = true
+            itemsLabel.isHidden = true
+            items2Label.isHidden = true
         } else if segue == .newGroup {
             titleLabel?.text = "Add Group"
             nameLabel?.text = "Group Name"
-            descStack.isHidden = true
+//            descStack.isHidden = true
+            descLabel.isHidden = true
+            descField.isHidden = true
             createAlertStack.isHidden = false
         } else if segue == .editGroup {
             navButton.setTitle("Delete", for: .normal)
             titleLabel?.text = "Edit Group"
             nameLabel?.text = "Group Name"
-            descStack.isHidden = true
+            descLabel.isHidden = true
+            descField.isHidden = true
             guard var identifier = identifier else { return }
             nameField?.text = identifier.name
             identifier.name = nameField!.text!
