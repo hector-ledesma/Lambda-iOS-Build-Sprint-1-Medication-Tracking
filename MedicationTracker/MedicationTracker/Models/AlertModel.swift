@@ -43,7 +43,7 @@ class Alert: Equatable, Codable {
         
         guard let group = self.group else { return }
         
-            content.body = "Remember tou take your \(group.name) supplements! "
+            content.body = "Remember to take your \(group.name) supplements! "
             for items in group.items {
                 content.body += "\(items.name) "
         }
@@ -51,7 +51,7 @@ class Alert: Equatable, Codable {
         content.categoryIdentifier = "alarm"
         content.sound = UNNotificationSound.default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         
         let request = UNNotificationRequest(identifier: group.name, content: content, trigger: trigger)
         center.add(request)
