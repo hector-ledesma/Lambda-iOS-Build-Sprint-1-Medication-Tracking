@@ -61,13 +61,5 @@ class RemindersTableViewCell: UITableViewCell {
         GroupController.groupController.saveToPersistentStore()
         AlertManager.alertManager.saveToPersistentStore()
         
-//        for group in GroupController.groupController.groups {
-//            for alert in AlertManager.alertManager.alerts {
-//                if alert.group?.name == group.name {
-//                    alert.group = group
-//                }
-//            }
-//        }
-        
     }
 }

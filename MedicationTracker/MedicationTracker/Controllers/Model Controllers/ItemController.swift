@@ -9,11 +9,8 @@
 import Foundation
 
 class ItemController: Codable {
-//    var items: [Item] = [Item(name: "Vitamin D", description: "PRAISE THE SUN"), Item(name: "Iron", description: "STEEL RESOLVE")]
-    
     static var itemController = ItemController()
     var items: [Item] = []
-    
     
     func create(name: String, description: String) {
         var newItem = Item(name: name, description: description)
@@ -32,7 +29,6 @@ class ItemController: Codable {
         let plistFile = documentsDir.appendingPathComponent("ItemsTrackers.plist")
         
         return plistFile
-        
         }
     }
     

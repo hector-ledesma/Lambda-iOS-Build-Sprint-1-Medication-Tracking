@@ -30,22 +30,8 @@ class MainScreenViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         loadPersistence()
-//        var group10name = groupController.groups[10].name
-//        let alertgroups = alertManager.alerts.compactMap { $0.group }
-//        if let otherGroup = alertgroups.first(where: {
-//            $0.name == group10name
-//        }) {
-//            groupController.groups[10] = otherGroup
-//        }
         
         tableView.reloadData()
-        
-        for groups in groupController.groups {
-            print("All in group: \(groups.name) with count of \(groups.items.count)")
-        }
-        for alerts in alertManager.activeAlerts {
-            print("Count: \(alertManager.activeAlerts.count) All in active alerts: \(alerts.group?.name) with count of \(alerts.group?.items.count)")
-        }
         
     }
     
@@ -56,19 +42,15 @@ class MainScreenViewController: UIViewController {
         
         if segue.identifier == "MainMenuSegue" {
             guard let mainMenuVC = segue.destination as? MainMenuViewController else { fatalError("Segue to MainMenu failed.") }
-            // MARK: - fix this
-//            mainMenuVC.dayController = self.dayController
-//            mainMenuVC.itemController = self.itemController
-//            mainMenuVC.groupController = self.groupController
+            
         } else if segue.identifier == "EditItemSegue" {
             guard let editVC = segue.destination as? DetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { fatalError("Segue to MainMenu failed.") }
-            //MARK: - Fix this
-//            editVC.dayController = self.dayController
-//            editVC.itemController = self.itemController
-//            editVC.groupController = self.groupController
+            
             editVC.delegate = self
+            
             guard let group = alertManager.activeAlerts[indexPath.row].group else { fatalError() }
+            
             if let activeGroupIndex = groupController.groups.firstIndex(of: group){
                     editVC.identifier = groupController.groups[activeGroupIndex]
             }
@@ -98,29 +80,16 @@ class MainScreenViewController: UIViewController {
 extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return groupController.groups.count
         
         return alertManager.activeAlerts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "mainViewCell") as? MainScreenTableViewCell else { fatalError("Could not convert items to cells") }
-//        let activeAlert = alertManager.activeAlerts[indexPath.row]
         
         guard var group = alertManager.activeAlerts[indexPath.row].group else {fatalError()}
-//        guard let group = groupController.groups.first(where: { $0 == groupFromAlert }) else { fatalError()}
-        
+
             cell.identifier = group
-        
-        
-        
-//        guard let group = alertManager.activeAlerts[indexPath.row].group else { fatalError() }
-//        if let activeGroupIndex = groupController.groups.firstIndex(of: group) {
-//            cell.identifier = groupController.groups[activeGroupIndex]
-//        }
-        
-//        cell.identifier = alertManager.activeAlerts[indexPath.row].group
-        
         
         return cell
     }

@@ -9,13 +9,12 @@
 import Foundation
 
 class GroupController: Codable {
-//    var groups: [Group] = [Group(name: "Group A", items: [Item(name: "Vitamin D", description: "PRAISE THE SUN"), Item(name: "Iron", description: "STEEL RESOLVE")])]
     
     static var groupController = GroupController()
     var groups: [Group] = []
     
     func create(name: String, items: [Item]) -> Group {
-        var newGroup = Group(name: name, items: items)
+        let newGroup = Group(name: name, items: items)
         self.groups.append(newGroup)
         
         //For the sake of sending the group from the controller as opposed to this temporary instance I'm doing this in a little bit of a convoluted way.
@@ -36,16 +35,6 @@ class GroupController: Codable {
     func muteAlerts() {
         
     }
-    
-//    func matchAlertToGroup(match alerts: [Alert], to groups: [Group]) {
-//        for alert in alerts {
-//            for group in groups {
-//                if alert.group?.name == group.name {
-//                    group.alerts.append(alert)
-//                }
-//            }
-//        }
-//    }
     
     // MARK: - Data Permanence Functionality
     var groupURL: URL? {

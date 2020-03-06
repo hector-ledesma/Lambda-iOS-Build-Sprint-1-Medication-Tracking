@@ -33,7 +33,6 @@ class DetailViewController: UIViewController {
     
     
     
-//    var dayController: DayController?
     var itemController = ItemController.itemController
     var groupController = GroupController.groupController
     var alertManager = AlertManager.alertManager
@@ -66,7 +65,6 @@ class DetailViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        print(delegate)
         delegate?.tableView.reloadData()
     }
 
@@ -76,7 +74,6 @@ class DetailViewController: UIViewController {
         if segue == .newItem {
             titleLabel?.text = "Add Item"
             nameLabel?.text = "Item Name"
-//            itemsStack.isHidden = true
             addedTableView.isHidden = true
             existingItemsTableView.isHidden = true
             itemsLabel.isHidden = true
@@ -84,7 +81,6 @@ class DetailViewController: UIViewController {
         } else if segue == .newGroup {
             titleLabel?.text = "Add Group"
             nameLabel?.text = "Group Name"
-//            descStack.isHidden = true
             descLabel.isHidden = true
             descField.isHidden = true
             createAlertStack.isHidden = false
@@ -119,7 +115,7 @@ class DetailViewController: UIViewController {
             
         } else if segue == .newGroup {
             let newGroup = groupController.create(name: name, items: itemsToBeAdded)
-            var alert: Alert?
+            
             if createAlertSwitch.isOn {
                 alertManager.createAlert(identifier: newGroup)
             }
@@ -150,11 +146,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         
         //Existing Items will always be the same
         if tableView == self.existingItemsTableView {
-            
-            
-            
-            // FIXME: Fix this
-//            guard let itemsInController = itemController else { fatalError() }
             count = itemController.items.count
         }
         
@@ -175,7 +166,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let itemController = itemController else { fatalError("No Item Controller somehow?") }
         var cell: UITableViewCell?
         
         if tableView == self.existingItemsTableView {
@@ -213,7 +203,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == self.existingItemsTableView {
-//            guard let itemController = itemController else { fatalError() }
             if segue! == .newGroup {
                 let item = itemController.items[indexPath.row]
                 for items in itemsToBeAdded {

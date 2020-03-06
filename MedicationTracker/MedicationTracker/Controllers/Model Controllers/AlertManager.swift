@@ -16,15 +16,14 @@ class AlertManager: Codable {
     var alerts: [Alert] = []
     var activeAlerts: [Alert] {
         get {
-            var activeAlerts: [Alert] = alerts.filter { $0.isActive }
+            let activeAlerts: [Alert] = alerts.filter { $0.isActive }
             return activeAlerts
         }
     }
     
-    func createAlert(identifier: Identifier) -> Alert? {
-        var newAlert = Alert(item: identifier)
+    func createAlert(identifier: Identifier) {
+        let newAlert = Alert(item: identifier)
         self.alerts.append(newAlert)
-        return newAlert
     }
     
     func deleteAlert(identifier: Identifier) -> Bool {
