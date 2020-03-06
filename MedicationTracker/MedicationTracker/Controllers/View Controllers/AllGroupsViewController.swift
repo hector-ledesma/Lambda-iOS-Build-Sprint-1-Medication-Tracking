@@ -35,7 +35,7 @@ class AllGroupsViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AllGroupsIdentifier") as? AllViewTableViewCell else { fatalError() }
         cell.groupNameLabel.text = groupController.groups[indexPath.row].name
-        cell.groupCountLabel.text = "\(groupController.groups[indexPath.row].items.count) items"
+        cell.groupCountLabel.text = groupController.groups[indexPath.row].items.count > 1 ? "\(groupController.groups[indexPath.row].items.count) items" : "\(groupController.groups[indexPath.row].items.count) item"
         return cell
     }
 
