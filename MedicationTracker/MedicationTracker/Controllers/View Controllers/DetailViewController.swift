@@ -179,21 +179,21 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 cell = addedCells
             } else if segue == .editGroup {
                 guard let identifier = self.identifier as? Group else { fatalError() }
-                guard let groupFind = groupController.groups.firstIndex(of: identifier) else { fatalError() }
-                let group = groupController.groups[groupFind]
-                let item = group.items[indexPath.row]
-                addedCells.identifier = item
-                addedCells.buttonAction = { sender in
-                    guard let itemDeleteIndex = group.items.firstIndex(of: item) else { fatalError() }
-                    group.items.remove(at: itemDeleteIndex)
-                    self.savePersistence()
-                    self.loadPersistence()
-                    self.addedTableView.reloadData()
+//                guard let groupFind = groupController.groups.firstIndex(of: identifier) else { fatalError() }
+                if let groupFind = groupController.groups.firstIndex(of: identifier) {
+                    let group = groupController.groups[groupFind]
+                    let item = group.items[indexPath.row]
+                    addedCells.identifier = item
+                    addedCells.buttonAction = { sender in
+                        guard let itemDeleteIndex = group.items.firstIndex(of: item) else { fatalError() }
+                        group.items.remove(at: itemDeleteIndex)
+                        self.savePersistence()
+                        self.loadPersistence()
+                        self.addedTableView.reloadData()
+                    }
                 }
-                
                 cell = addedCells
             }
-            
         }
         return cell! // If this doesn't update, break app.
     }
