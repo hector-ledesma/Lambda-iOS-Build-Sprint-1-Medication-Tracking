@@ -48,6 +48,7 @@ class GroupsForItemTableViewCell: UITableViewCell {
         guard let item = item,
         let group = group else { return }
         
-        
+        group.items.removeAll{ $0 == item }
+        GroupController.groupController.saveToPersistentStore()
     }
 }
