@@ -26,6 +26,7 @@ class EditItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegates()
         
         if item != nil {
             updateViews()
@@ -35,7 +36,17 @@ class EditItemViewController: UIViewController {
     // MARK: - Methods
     
     func updateViews() {
+        guard let item = item else { return }
         
+        
+    }
+    
+    // Use this function to set delegates for the sake of keeping viewDidLoad cleaner.
+    // TODO: Do this for other views
+    func setDelegates() {
+        groupsTableView.dataSource = self
+        groupsTableView.delegate = self
+        descView.delegate = self
     }
     
     // Pass in the item that was loaded into the view, and find all groups where that item exists.
