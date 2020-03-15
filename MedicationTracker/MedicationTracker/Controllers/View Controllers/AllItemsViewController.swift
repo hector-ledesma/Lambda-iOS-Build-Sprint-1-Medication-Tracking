@@ -44,16 +44,17 @@ class AllItemsViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new controller.
+        if segue.identifier == "EditItemSegue" {
+            guard let editVC = segue.destination as? EditItemViewController,
+                let indexPath = allItemsTableView.indexPathForSelectedRow else { fatalError() }
+            
+            editVC.item = itemController.items[indexPath.row]
+            
+        }
     }
-    */
     
     
 
