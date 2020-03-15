@@ -31,9 +31,17 @@ class EditGroupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
+        updateViews()
     }
     
     // MARK: - Methods
+    
+    private func updateViews() {
+        guard let group = group else { return }
+        self.groupNameLabel.text = group.name
+        existingItemsTableView.reloadData()
+        addedItemsTableView.reloadData()
+    }
     
     private func setDelegates() {
         addedItemsTableView.delegate = self
@@ -49,15 +57,33 @@ class EditGroupViewController: UIViewController {
 extension EditGroupViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var count: Int = 0
         if tableView == addedItemsTableView {
-            return 0
+            count = self.group!.items.count
         } else if tableView == existingItemsTableView {
-            return 0
+            count = self.itemController.items.count
         }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        var cell = UITableViewCell()
+        
+        if tableView == addedItemsTableView {
+            guard let addedItem = tableView.dequeueReusableCell(withIdentifier: "AddedItemsCell") as? AddedItemsTableViewCell else { return cell}
+            
+            addedItem.item = self.group?.items[indexPath.row]
+            
+            cell = addedItem
+        } else if tableView == existingItemsTableView {
+            guard let existingItem = tableView.dequeueReusableCell(withIdentifier: "ExistingItemsCell") as? ExistingItemsTableViewCell else { return cell}
+            
+            existingItem.item = itemController.items[indexPath.row]
+            
+            cell = existingItem
+        }
+        
+        return cell
     }
     
     

@@ -69,31 +69,19 @@ class EditItemViewController: UIViewController {
     // MARK: - Button Functionality
 
     @IBAction func saveButtonTapped(_ sender: Any) {
-//        if let itemIndex = itemController.items.firstIndex(of: item!) {
-//            guard let itemName = itemNameField.text,
-//                !itemName.isEmpty,
-//                let itemDescription = descView.text else { return }
-//
-//            itemController.items[itemIndex].name = itemName
-//            itemController.items[itemIndex].description = itemDescription
-//
-//            self.dismiss(animated: true) { self.delegate?.allItemsTableView.reloadData()
-//            }
-        if let item = item {
         guard let itemName = itemNameField.text,
-            !itemName.isEmpty,
-            let itemDescription = descView.text else { return }
+        !itemName.isEmpty,
+        let itemDescription = descView.text else { return }
         
-            item.name = itemName
-            item.description = itemDescription
+        if let item = item {
             
-        
-            itemController.saveToPersistentStore()
-        self.dismiss(animated: true) { self.delegate?.allItemsTableView.reloadData()
-        }
+                item.name = itemName
+                item.description = itemDescription
+                
             
-            
-            
+                itemController.saveToPersistentStore()
+            self.dismiss(animated: true) { self.delegate?.allItemsTableView.reloadData()
+            }
         }
     }
     
