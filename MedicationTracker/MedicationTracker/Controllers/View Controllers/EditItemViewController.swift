@@ -12,7 +12,7 @@ class EditItemViewController: UIViewController {
 
     // MARK: - Outlets
     
-    @IBOutlet weak var itemNamField: UITextField!
+    @IBOutlet weak var itemNameField: UITextField!
     // TODO: Make create item view a text view as well
     @IBOutlet weak var descView: UITextView!
     @IBOutlet weak var groupsTableView: UITableView!
@@ -38,6 +38,8 @@ class EditItemViewController: UIViewController {
     func updateViews() {
         guard let item = item else { return }
         
+        itemNameField.text = item.name
+        descView.text = item.description
         
     }
     
@@ -52,6 +54,15 @@ class EditItemViewController: UIViewController {
     // Pass in the item that was loaded into the view, and find all groups where that item exists.
     func getGroups(for item: Item) -> [Group] {
         
+        var groups: [Group] = []
+        
+        for group in groupController.groups {
+            if let _ = group.items.firstIndex(of: item) {
+                groups.append(group)
+            }
+        }
+        
+        return groups
     }
     
     // MARK: - Button Functionality

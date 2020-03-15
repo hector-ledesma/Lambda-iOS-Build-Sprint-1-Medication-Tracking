@@ -744,7 +744,7 @@
                     <connections>
                         <outlet property="descView" destination="wE8-3a-V7P" id="A5g-Vx-syv"/>
                         <outlet property="groupsTableView" destination="daN-HJ-s8A" id="NnA-Qo-tXN"/>
-                        <outlet property="itemNamField" destination="kDI-tC-I3n" id="qGP-dM-x8v"/>
+                        <outlet property="itemNameField" destination="kDI-tC-I3n" id="Ahc-Zq-rtO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTK-SC-WTj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
