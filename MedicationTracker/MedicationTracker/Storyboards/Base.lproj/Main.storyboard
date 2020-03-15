@@ -944,14 +944,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Item/Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxh-ra-40S">
-                                        <rect key="frame" x="58" y="40" width="180" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxh-ra-40S">
+                                        <rect key="frame" x="58" y="40" width="118.5" height="29"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item/Group Name *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Wm-aq-Wm4">
-                                        <rect key="frame" x="30" y="134" width="157.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Wm-aq-Wm4">
+                                        <rect key="frame" x="30" y="134" width="114" height="20.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1102,8 +1102,12 @@
                         <viewLayoutGuide key="safeArea" id="hrK-lA-hxi"/>
                     </view>
                     <connections>
+                        <outlet property="addedItemsTableView" destination="1Tq-7r-6RN" id="tc5-rJ-Obh"/>
+                        <outlet property="alertLabel" destination="TgL-tv-fK8" id="Eba-Ac-S42"/>
+                        <outlet property="alertSwitch" destination="krv-Mz-P94" id="w7e-IB-qFq"/>
                         <outlet property="createAlertSwitch" destination="krv-Mz-P94" id="hR9-QW-M4J"/>
-                        <outlet property="existingItemsTableView" destination="WzA-Vh-FhM" id="w8G-Wc-pHS"/>
+                        <outlet property="existingItemsTableView" destination="WzA-Vh-FhM" id="4y8-dg-5oK"/>
+                        <outlet property="groupNameLabel" destination="Ack-4U-1Bf" id="Dlg-4A-A8e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGD-S1-2uq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
