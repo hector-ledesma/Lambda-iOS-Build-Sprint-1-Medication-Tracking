@@ -10,21 +10,36 @@ import UIKit
 
 class EditItemViewController: UIViewController {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var itemNamField: UITextField!
+    @IBOutlet weak var descView: UITextView!
+    @IBOutlet weak var groupsTableView: UITableView!
+    
+    // MARK: - Properties
+    var item: Item?
+    
+    var itemController = ItemController.itemController
+       var groupController = GroupController.groupController
+       var alertManager = AlertManager.alertManager
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if item != nil {
+            updateViews()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Methods
+    
+    func updateViews() {
+        
     }
-    */
+    
+    // MARK: - Button Functionality
 
+    @IBAction func saveButtonTapped(_ sender: Any) {
+    }
+    
 }
