@@ -46,6 +46,10 @@ class AllGroupsViewController: UIViewController, UITableViewDelegate, UITableVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "EditGroupSegue" {
+            guard let groupEditVC = segue.destination as? EditGroupViewController,
+                let indexPath = allGroupsTableView.indexPathForSelectedRow else { fatalError() }
+            
+            groupEditVC.group = groupController.groups[indexPath.row]
         }
     }
 

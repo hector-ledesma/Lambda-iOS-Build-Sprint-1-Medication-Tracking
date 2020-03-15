@@ -22,6 +22,12 @@ class EditGroupViewController: UIViewController {
     
     var group: Group?
     
+    // MARK: - Controllers
+    
+    var alertManager = AlertManager.alertManager
+    var groupController = GroupController.groupController
+    var itemController = ItemController.itemController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
