@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     
     @IBOutlet var descLabel: UILabel!
+    // TODO: Make create item view a text view as well
     @IBOutlet weak var descField: UITextField!
     @IBOutlet weak var descStack: UIStackView!
     

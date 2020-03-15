@@ -13,6 +13,7 @@ class EditItemViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var itemNamField: UITextField!
+    // TODO: Make create item view a text view as well
     @IBOutlet weak var descView: UITextView!
     @IBOutlet weak var groupsTableView: UITableView!
     
@@ -37,9 +38,33 @@ class EditItemViewController: UIViewController {
         
     }
     
+    // Pass in the item that was loaded into the view, and find all groups where that item exists.
+    func getGroups(for item: Item) -> [Group] {
+        
+    }
+    
     // MARK: - Button Functionality
 
     @IBAction func saveButtonTapped(_ sender: Any) {
     }
+    
+} // End of main class
+
+// MARK: - Extensions
+
+extension EditItemViewController: UITextViewDelegate {
+    
+}
+
+extension EditItemViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return getGroups(for: item!).count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
     
 }
