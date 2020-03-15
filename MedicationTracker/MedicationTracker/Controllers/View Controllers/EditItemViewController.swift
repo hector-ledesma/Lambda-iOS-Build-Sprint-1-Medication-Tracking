@@ -118,6 +118,7 @@ extension EditItemViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.group = group
         cell.item = item
+        cell.updateTable = { self.groupsTableView.reloadData() }
         
         return cell
     }

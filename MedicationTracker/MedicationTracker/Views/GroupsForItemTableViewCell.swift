@@ -21,6 +21,7 @@ class GroupsForItemTableViewCell: UITableViewCell {
         }
     }
     var item: Item?
+    var updateTable: (() -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,9 +47,11 @@ class GroupsForItemTableViewCell: UITableViewCell {
 
     @IBAction func delButtonTapped(_ sender: Any) {
         guard let item = item,
-        let group = group else { return }
+        let group = group,
+        let reload = updateTable else { return }
         
         group.items.removeAll{ $0 == item }
+        reload()
         GroupController.groupController.saveToPersistentStore()
     }
 }
