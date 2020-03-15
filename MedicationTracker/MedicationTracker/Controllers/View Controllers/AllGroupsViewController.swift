@@ -13,6 +13,7 @@ class AllGroupsViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var allGroupsTableView: UITableView!
     
     var groupController = GroupController.groupController
+    var alertManager = AlertManager.alertManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +40,32 @@ class AllGroupsViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "EditItemSegue" {
+            guard let editVC = segue.destination as? DetailViewController,
+                let indexPath = allGroupsTableView.indexPathForSelectedRow else { fatalError("Segue to MainMenu failed.") }
+            
+            editVC.delegate = self
+            
+            guard let group = alertManager.activeAlerts[indexPath.row].group else { fatalError() }
+            
+            if let activeGroupIndex = groupController.groups.firstIndex(of: group){
+                    editVC.identifier = groupController.groups[activeGroupIndex]
+            }
+            
+            editVC.segue = .editGroup
+            
+        }
     }
-    */
 
+}
+
+extension AllGroupsViewController: DetailViewDelegate {
+    func updateViews() {
+        allGroupsTableView.reloadData()
+    }
 }

@@ -47,7 +47,7 @@ class DetailViewController: UIViewController {
     var itemsToBeEdited: [Item] = []
     
     // Delegate
-    var delegate: MainScreenViewController?
+    var delegate: DetailViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +66,7 @@ class DetailViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        delegate?.tableView.reloadData()
+        delegate?.updateViews()
     }
 
     

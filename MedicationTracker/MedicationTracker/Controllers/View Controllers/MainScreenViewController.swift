@@ -124,7 +124,7 @@ extension MainScreenViewController{
 
 // MARK: - Delegate Methods
 
-extension MainScreenViewController {
+extension MainScreenViewController: DetailViewDelegate {
     func updateViews() {
         tableView.reloadData()
     }

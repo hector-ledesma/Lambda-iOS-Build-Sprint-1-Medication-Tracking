@@ -895,7 +895,7 @@
                                         <connections>
                                             <outlet property="groupCountLabel" destination="jU3-2D-9OP" id="aC1-pG-nGM"/>
                                             <outlet property="groupNameLabel" destination="c1J-es-tu0" id="eRb-Dw-GRX"/>
-                                            <segue destination="6fl-EH-Pic" kind="presentation" id="vcu-1v-BPv"/>
+                                            <segue destination="6fl-EH-Pic" kind="presentation" identifier="EditItemSegue" id="vcu-1v-BPv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1097,10 +1097,26 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="V8H-ZF-ZWt"/>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vitamins, Supplements, etc" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jj9-QY-0rx">
+                                <rect key="frame" x="10" y="10" width="354" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="hrK-lA-hxi"/>
                     </view>
+                    <connections>
+                        <outlet property="addedTableView" destination="1Tq-7r-6RN" id="Vr0-tr-4kk"/>
+                        <outlet property="createAlertStack" destination="H5q-D1-5xo" id="Umx-ed-LIc"/>
+                        <outlet property="createAlertSwitch" destination="krv-Mz-P94" id="hR9-QW-M4J"/>
+                        <outlet property="descField" destination="Jj9-QY-0rx" id="TMv-bL-ZeN"/>
+                        <outlet property="existingItemsTableView" destination="WzA-Vh-FhM" id="w8G-Wc-pHS"/>
+                        <outlet property="nameField" destination="Ack-4U-1Bf" id="mzI-Dm-2rV"/>
+                        <outlet property="nameLabel" destination="1Wm-aq-Wm4" id="wsC-iO-yVs"/>
+                        <outlet property="titleLabel" destination="Gxh-ra-40S" id="Bv9-TG-Uy7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGD-S1-2uq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
