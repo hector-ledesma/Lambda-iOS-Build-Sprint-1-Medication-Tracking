@@ -30,6 +30,35 @@ class EditGroupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegates()
+    }
+    
+    // MARK: - Methods
+    
+    private func setDelegates() {
+        addedItemsTableView.delegate = self
+        addedItemsTableView.dataSource = self
+        existingItemsTableView.delegate = self
+        existingItemsTableView.dataSource = self
     }
 
+}
+
+// MARK: - Extensions
+
+extension EditGroupViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == addedItemsTableView {
+            return 0
+        } else if tableView == existingItemsTableView {
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
 }
