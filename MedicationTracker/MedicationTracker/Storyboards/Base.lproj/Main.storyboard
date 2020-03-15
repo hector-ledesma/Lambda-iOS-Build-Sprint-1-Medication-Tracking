@@ -677,7 +677,6 @@
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="groupNameLabel" destination="tpH-Fb-keO" id="0Ge-d5-CYk"/>
-                                                    <outlet property="itemNameLabel" destination="tpH-Fb-keO" id="Kdm-jj-F71"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
