@@ -14,6 +14,14 @@ class GroupsForItemTableViewCell: UITableViewCell {
 
     @IBOutlet weak var groupNameLabel: UILabel!
     
+    // MARK: - Properties
+    var group: Group? {
+        didSet {
+            updateViews()
+        }
+    }
+    var item: Item?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,8 +33,21 @@ class GroupsForItemTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Methods
+    
+    private func updateViews() {
+        groupNameLabel.text = group?.name
+        print("we here")
+        print(group)
+        print(item)
+    }
+    
     // MARK: - Button Functionality
 
     @IBAction func delButtonTapped(_ sender: Any) {
+        guard let item = item,
+        let group = group else { return }
+        
+        
     }
 }

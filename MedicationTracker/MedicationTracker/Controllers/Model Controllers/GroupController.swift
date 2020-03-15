@@ -19,6 +19,7 @@ class GroupController: Codable {
         
         //For the sake of sending the group from the controller as opposed to this temporary instance I'm doing this in a little bit of a convoluted way.
             guard let indexOfNewGroup = self.groups.firstIndex(of: newGroup) else { fatalError() }
+        
         return self.groups[indexOfNewGroup]
     }
     

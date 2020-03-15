@@ -15,7 +15,6 @@ class Item: Identifier, Equatable, Codable {
     var status: Status
     var description: String
     var photoData: [Data]
-    var groups: [Group] = []
     
     init(name: String, description: String, photoData: [Data] = []) {
         self.name = name

@@ -28,7 +28,7 @@ class EditItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
-        
+        print(getGroups(for: item!))
         if item != nil {
             updateViews()
         }
@@ -116,7 +116,8 @@ extension EditItemViewController: UITableViewDataSource, UITableViewDelegate {
         
         let group =  getGroups(for: item!)[indexPath.row]
         
-        cell.groupNameLabel.text = group.name
+        cell.group = group
+        cell.item = item
         
         return cell
     }
