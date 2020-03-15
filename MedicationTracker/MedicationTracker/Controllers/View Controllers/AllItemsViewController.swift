@@ -52,6 +52,7 @@ class AllItemsViewController: UIViewController, UITableViewDelegate, UITableView
                 let indexPath = allItemsTableView.indexPathForSelectedRow else { fatalError() }
             
             editVC.item = itemController.items[indexPath.row]
+            editVC.delegate = self
             
         }
     }
