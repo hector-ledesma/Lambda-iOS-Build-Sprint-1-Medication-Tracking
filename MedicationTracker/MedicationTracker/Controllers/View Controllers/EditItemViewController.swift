@@ -63,7 +63,13 @@ extension EditItemViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupsForItemCell") as? GroupsForItemTableViewCell else { fatalError() }
+        
+        let group =  getGroups(for: item!)[indexPath.row]
+        
+        cell.groupNameLabel.text = group.name
+        
+        return cell
     }
     
     
