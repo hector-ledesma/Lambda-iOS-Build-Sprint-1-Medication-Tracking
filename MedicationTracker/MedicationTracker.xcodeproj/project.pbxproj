@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F8B4DCE241ED77000AA95A8 /* EditGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B4DCD241ED77000AA95A8 /* EditGroupViewController.swift */; };
 		0FBD793C241DB6AD00CFE370 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBD793B241DB6AD00CFE370 /* EditItemViewController.swift */; };
 		0FBD793E241DBA9E00CFE370 /* GroupsForItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBD793D241DBA9E00CFE370 /* GroupsForItemTableViewCell.swift */; };
 		0FBD7940241DDFD400CFE370 /* DetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBD793F241DDFD400CFE370 /* DetailViewDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F8B4DCD241ED77000AA95A8 /* EditGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupViewController.swift; sourceTree = "<group>"; };
 		0FBD793B241DB6AD00CFE370 /* EditItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
 		0FBD793D241DBA9E00CFE370 /* GroupsForItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsForItemTableViewCell.swift; sourceTree = "<group>"; };
 		0FBD793F241DDFD400CFE370 /* DetailViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				9C2234482411BB7600EAA8A5 /* AllItemsViewController.swift */,
 				9C22344A2411BB9000EAA8A5 /* AllGroupsViewController.swift */,
 				0FBD793B241DB6AD00CFE370 /* EditItemViewController.swift */,
+				0F8B4DCD241ED77000AA95A8 /* EditGroupViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				9C2234452410463E00EAA8A5 /* RemindersTableViewCell.swift in Sources */,
 				9C22342C240F345900EAA8A5 /* DayModel.swift in Sources */,
 				9C223437240F38E100EAA8A5 /* DayController.swift in Sources */,
+				0F8B4DCE241ED77000AA95A8 /* EditGroupViewController.swift in Sources */,
 				9C2234492411BB7600EAA8A5 /* AllItemsViewController.swift in Sources */,
 				9C0F6917240EF5B50045DE77 /* DetailViewController.swift in Sources */,
 				9C223432240F356B00EAA8A5 /* GroupModel.swift in Sources */,

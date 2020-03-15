@@ -45,20 +45,7 @@ class AllGroupsViewController: UIViewController, UITableViewDelegate, UITableVie
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "EditItemSegue" {
-            guard let editVC = segue.destination as? DetailViewController,
-                let indexPath = allGroupsTableView.indexPathForSelectedRow else { fatalError("Segue to MainMenu failed.") }
-            
-            editVC.delegate = self
-            
-            guard let group = alertManager.activeAlerts[indexPath.row].group else { fatalError() }
-            
-            if let activeGroupIndex = groupController.groups.firstIndex(of: group){
-                    editVC.identifier = groupController.groups[activeGroupIndex]
-            }
-            
-            editVC.segue = .editGroup
-            
+        if segue.identifier == "EditGroupSegue" {
         }
     }
 
