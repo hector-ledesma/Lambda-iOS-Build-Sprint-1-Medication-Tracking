@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FBD793C241DB6AD00CFE370 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBD793B241DB6AD00CFE370 /* EditItemViewController.swift */; };
 		9C0F68F6240EE9EE0045DE77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F68F5240EE9EE0045DE77 /* AppDelegate.swift */; };
 		9C0F68F8240EE9EE0045DE77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F68F7240EE9EE0045DE77 /* SceneDelegate.swift */; };
 		9C0F68FD240EE9EE0045DE77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0F68FB240EE9EE0045DE77 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FBD793B241DB6AD00CFE370 /* EditItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
 		9C0F68F2240EE9EE0045DE77 /* MedicationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C0F68F5240EE9EE0045DE77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C0F68F7240EE9EE0045DE77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				9C0F691A240EF8E30045DE77 /* CalendarViewController.swift */,
 				9C2234482411BB7600EAA8A5 /* AllItemsViewController.swift */,
 				9C22344A2411BB9000EAA8A5 /* AllGroupsViewController.swift */,
+				0FBD793B241DB6AD00CFE370 /* EditItemViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0F691B240EF8E30045DE77 /* CalendarViewController.swift in Sources */,
+				0FBD793C241DB6AD00CFE370 /* EditItemViewController.swift in Sources */,
 				9C0F6913240EEBD00045DE77 /* MainScreenTableViewCell.swift in Sources */,
 				9C223439240F3EE100EAA8A5 /* ItemController.swift in Sources */,
 				9C0F6919240EF8020045DE77 /* RemindersViewController.swift in Sources */,
