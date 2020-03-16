@@ -28,6 +28,7 @@ class AllGroupsViewController: UIViewController, UITableViewDelegate, UITableVie
         print(groupController.groups.count)
     }
     
+    // MARK: - Table View Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groupController.groups.count
@@ -35,9 +36,30 @@ class AllGroupsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AllGroupsIdentifier") as? AllViewTableViewCell else { fatalError() }
-        cell.groupNameLabel.text = groupController.groups[indexPath.row].name
-        cell.groupCountLabel.text = groupController.groups[indexPath.row].items.count > 1 ? "\(groupController.groups[indexPath.row].items.count) items" : "\(groupController.groups[indexPath.row].items.count) item"
+        
+        let group = groupController.groups[indexPath.row]
+        cell.groupNameLabel.text = group.name
+        cell.groupCountLabel.text = group.items.count > 1 ? "\(groupController.groups[indexPath.row].items.count) items" : "\(groupController.groups[indexPath.row].items.count) item"
+        
+        cell.groupButtonAction = {
+            print("Hit")
+            for activeAlert in self.alertManager.activeAlerts {
+                if activeAlert.group == group {
+                    self.alertManager.deleteAlert(identifier: group as Identifier)
+                }
+            }
+            self.groupController.delete(group: group)
+            self.savePersistence()
+            self.allGroupsTableView.reloadData()
+        }
         return cell
+    }
+    
+    // MARK: - Methods
+    
+    func savePersistence() {
+        alertManager.saveToPersistentStore()
+        groupController.saveToPersistentStore()
     }
 
     // MARK: - Navigation

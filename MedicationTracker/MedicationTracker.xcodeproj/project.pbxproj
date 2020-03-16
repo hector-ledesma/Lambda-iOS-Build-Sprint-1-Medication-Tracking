@@ -112,8 +112,8 @@
 			children = (
 				9C0F690E240EEA660045DE77 /* Resources */,
 				9C0F690C240EEA560045DE77 /* Storyboards */,
-				9C0F690B240EEA510045DE77 /* Controllers */,
 				9C0F690A240EEA490045DE77 /* Models */,
+				9C0F690B240EEA510045DE77 /* Controllers */,
 				9C0F6909240EEA3F0045DE77 /* Views */,
 			);
 			path = MedicationTracker;

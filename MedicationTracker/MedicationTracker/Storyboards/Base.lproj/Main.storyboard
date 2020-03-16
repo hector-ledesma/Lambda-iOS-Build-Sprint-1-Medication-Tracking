@@ -884,6 +884,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQe-gM-ZTt">
                                                     <rect key="frame" x="344" y="17.5" width="20" height="22"/>
                                                     <state key="normal" image="trash.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="groupDelete:" destination="RBy-gv-GEF" eventType="touchUpInside" id="cPU-XQ-AGX"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -939,7 +942,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="doY-5K-vlt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1938" y="1406"/>
+            <point key="canvasLocation" x="1937.68115942029" y="1405.5803571428571"/>
         </scene>
         <!--Edit Group View Controller-->
         <scene sceneID="iAj-Zh-PNl">

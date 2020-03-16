@@ -23,10 +23,9 @@ class GroupController: Codable {
         return self.groups[indexOfNewGroup]
     }
     
-    func delete(group: Group) -> Bool {
+    func delete(group: Group) {
         guard let groupToBeDeleted = groups.firstIndex(of: group) else { fatalError() }
         groups.remove(at: groupToBeDeleted)
-        return true
     }
     
     func newAlerts(identifier: Identifier) {

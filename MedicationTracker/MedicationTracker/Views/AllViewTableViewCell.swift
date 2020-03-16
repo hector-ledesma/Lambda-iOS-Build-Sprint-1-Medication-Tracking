@@ -19,6 +19,7 @@ class AllViewTableViewCell: UITableViewCell {
     var groupController = GroupController.groupController
     
     var buttonAction : ((UITableViewCell) -> Void)?
+    var groupButtonAction : (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +33,10 @@ class AllViewTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func groupDelete(_ sender: UIButton) {
+        groupButtonAction?()
+    }
+    
     @IBAction func itemDelete(_ sender: UIButton) {
         for group in groupController.groups {
             for item in group.items {
