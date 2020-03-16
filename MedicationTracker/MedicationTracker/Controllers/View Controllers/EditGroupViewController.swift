@@ -74,6 +74,10 @@ extension EditGroupViewController: UITableViewDataSource, UITableViewDelegate {
             
             addedItem.item = self.group?.items[indexPath.row]
             
+            addedItem.buttonAction = { something in
+                self.group?.items.removeAll(where: {$0 == self.group?.items[indexPath.row]})
+            }
+            
             cell = addedItem
         } else if tableView == existingItemsTableView {
             guard let existingItem = tableView.dequeueReusableCell(withIdentifier: "ExistingItemsCell") as? ExistingItemsTableViewCell else { return cell}
