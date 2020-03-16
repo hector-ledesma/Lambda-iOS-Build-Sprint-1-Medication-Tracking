@@ -86,5 +86,16 @@ extension EditGroupViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == existingItemsTableView {
+            if let _ = self.group?.items.firstIndex(of: itemController.items[indexPath.row]) {
+                print("Item already exists")
+            } else {
+                self.group?.items.append(itemController.items[indexPath.row])
+                addedItemsTableView.reloadData()
+            }
+        }
+    }
+    
     
 }

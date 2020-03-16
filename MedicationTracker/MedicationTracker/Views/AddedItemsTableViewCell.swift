@@ -40,6 +40,7 @@ class AddedItemsTableViewCell: UITableViewCell {
     func createView() {
         guard let item = item else { return }
         itemNameLabel.text = item.name
+        deleteItemButton.isHidden = false
     }
     
     func editView() {
@@ -49,6 +50,7 @@ class AddedItemsTableViewCell: UITableViewCell {
     }
 
     // MARK: - Buttons Functionality
+    
     @IBAction func deleteItemTapped(_ sender: UIButton) {
         self.buttonAction?(sender)
     }
