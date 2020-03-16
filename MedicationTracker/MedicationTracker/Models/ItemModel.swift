@@ -24,7 +24,7 @@ class Item: Identifier, Equatable, Codable {
     }
     
     static func == (lhs: Item, rhs: Item) -> Bool {
-        return lhs.name == rhs.name
+        return lhs.name == rhs.name && lhs.description == rhs.description
     }
     
 }

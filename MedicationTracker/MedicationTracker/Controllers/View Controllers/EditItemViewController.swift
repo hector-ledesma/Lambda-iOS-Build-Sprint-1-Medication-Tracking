@@ -74,12 +74,33 @@ class EditItemViewController: UIViewController {
         let itemDescription = descView.text else { return }
         
         if let item = item {
+            // Index of the item we're editing in the intemController
+            guard let indexOfItem = itemController.items.firstIndex(where: { $0 == item }) else { fatalError()}
+             
+            var indices: [Int:Int] = [:]
             
-                item.name = itemName
-                item.description = itemDescription
+            // Populate the dictionary
+            for group in groupController.groups {
+                // indexOfGroup will be the index of the group that will get edited, and indexInGroup will be the index of the item that will be overlapped
+                if let indexInGroup = group.items.firstIndex(of: item), let indexOfGroup = groupController.groups.firstIndex(of: group) {
+                    print("Found a group")
+                    indices[indexOfGroup] = indexInGroup
+                }
+            }
+            
+            
+            
+            itemController.items[indexOfItem].name = itemName
+            itemController.items[indexOfItem].description = itemDescription
+            
+            for (groupIndex, itemIndex) in indices {
+                groupController.groups[groupIndex].items[itemIndex] = itemController.items[indexOfItem]
+            }
                 
             
                 itemController.saveToPersistentStore()
+            groupController.saveToPersistentStore()
+            alertManager.saveToPersistentStore()
             self.dismiss(animated: true) { self.delegate?.allItemsTableView.reloadData()
             }
         }
