@@ -98,9 +98,6 @@ class DetailViewController: UIViewController {
     
     
     // MARK: - Buttons Functionality
-    @IBAction func addItemTapped(_ sender: Any) {
-        
-    }
     @IBAction func navButtonTappeed(_ sender: Any) {
         guard let name = nameField.text,
             !name.isEmpty else { return }

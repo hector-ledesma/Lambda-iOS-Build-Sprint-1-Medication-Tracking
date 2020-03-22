@@ -36,6 +36,12 @@ class GroupController: Codable {
         
     }
     
+    func deleteItem(for group: Group, at item: Item) {
+        guard let thisGroup = groups.first(where:  { $0 == group } ) else { return }
+        thisGroup.items.removeAll(where: ( {$0 == item} ) )
+        
+    }
+    
     // MARK: - Data Permanence Functionality
     var groupURL: URL? {
     get {

@@ -111,26 +111,26 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderCell" id="Ljw-E1-7j1" customClass="RemindersTableViewCell" customModule="MedicationTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="78"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="78.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ljw-E1-7j1" id="F42-Ok-d5B">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="78.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzG-Yw-9Qg">
-                                                    <rect key="frame" x="50" y="26" width="80.5" height="26"/>
+                                                    <rect key="frame" x="50" y="26" width="80.5" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiZ-dP-JfS">
-                                                    <rect key="frame" x="223" y="29" width="35" height="20"/>
+                                                    <rect key="frame" x="223" y="29.5" width="35" height="20"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7u-5n-Xw2">
-                                                    <rect key="frame" x="330" y="24" width="54" height="30"/>
+                                                    <rect key="frame" x="330" y="24.5" width="54" height="30"/>
                                                     <state key="normal" title="Inactive"/>
                                                     <connections>
                                                         <action selector="isActiveTapped:" destination="Ljw-E1-7j1" eventType="touchUpInside" id="ndJ-t7-41y"/>
@@ -517,27 +517,27 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AllltemsCell" id="vQj-SJ-1ez" customClass="AllViewTableViewCell" customModule="MedicationTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="56"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="56.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vQj-SJ-1ez" id="Nxc-qC-lzw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="56.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ti-LL-cJe">
-                                                    <rect key="frame" x="30" y="15" width="80.5" height="26"/>
+                                                    <rect key="frame" x="30" y="15" width="80.5" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WI6-qM-HcT">
-                                                    <rect key="frame" x="323" y="17" width="20" height="22"/>
+                                                    <rect key="frame" x="323" y="17.5" width="20" height="22"/>
                                                     <state key="normal" image="trash.fill" catalog="system"/>
                                                     <connections>
                                                         <action selector="itemDelete:" destination="vQj-SJ-1ez" eventType="touchUpInside" id="9HR-hN-WBT"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lV0-Nx-fW8">
-                                                    <rect key="frame" x="363" y="17" width="21" height="22"/>
+                                                    <rect key="frame" x="363" y="17.5" width="21" height="22"/>
                                                     <state key="normal" image="square.and.pencil" catalog="system"/>
                                                 </button>
                                             </subviews>
@@ -863,14 +863,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AllGroupsIdentifier" id="RBy-gv-GEF" customClass="AllViewTableViewCell" customModule="MedicationTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RBy-gv-GEF" id="dzF-DO-kpW">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="56.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1J-es-tu0">
-                                                    <rect key="frame" x="30" y="15" width="80.5" height="26.5"/>
+                                                    <rect key="frame" x="30" y="15" width="80.5" height="26"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -882,7 +882,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQe-gM-ZTt">
-                                                    <rect key="frame" x="344" y="17.5" width="20" height="22"/>
+                                                    <rect key="frame" x="344" y="17" width="20" height="22"/>
                                                     <state key="normal" image="trash.fill" catalog="system"/>
                                                     <connections>
                                                         <action selector="groupDelete:" destination="RBy-gv-GEF" eventType="touchUpInside" id="cPU-XQ-AGX"/>
@@ -1030,7 +1030,7 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="trash.fill" catalog="system"/>
                                                             <connections>
-                                                                <action selector="deleteItemTapped:" destination="FHl-kw-ZfW" eventType="touchUpInside" id="PRr-VF-QQN"/>
+                                                                <action selector="deleteItemTapped:" destination="FHl-kw-ZfW" eventType="touchUpInside" id="6t9-yg-Z5a"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>

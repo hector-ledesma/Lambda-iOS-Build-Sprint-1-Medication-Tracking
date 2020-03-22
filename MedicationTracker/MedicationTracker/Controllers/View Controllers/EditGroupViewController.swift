@@ -20,7 +20,12 @@ class EditGroupViewController: UIViewController {
     
     // MARK: - Properties
     
-    var group: Group?
+    var group: Group? {
+        didSet {
+            itemsInGroup = group!.items
+        }
+    }
+    var itemsInGroup: [Item] = []
     
     // MARK: - Controllers
     
@@ -59,7 +64,8 @@ extension EditGroupViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count: Int = 0
         if tableView == addedItemsTableView {
-            count = self.group!.items.count
+//            count = self.group!.items.count
+            count = self.itemsInGroup.count
         } else if tableView == existingItemsTableView {
             count = self.itemController.items.count
         }
@@ -72,10 +78,13 @@ extension EditGroupViewController: UITableViewDataSource, UITableViewDelegate {
         if tableView == addedItemsTableView {
             guard let addedItem = tableView.dequeueReusableCell(withIdentifier: "AddedItemsCell") as? AddedItemsTableViewCell else { return cell}
             
-            addedItem.item = self.group?.items[indexPath.row]
+//            addedItem.item = self.group?.items[indexPath.row]
+            addedItem.item = self.itemsInGroup[indexPath.row]
             
             addedItem.buttonAction = { something in
-                self.group!.items.removeAll(where: {$0 == self.group!.items[indexPath.row]})
+                
+                self.remove(item: self.itemsInGroup[indexPath.row])
+                
             }
             
             cell = addedItem
@@ -92,14 +101,18 @@ extension EditGroupViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == existingItemsTableView {
-            if let _ = self.group?.items.firstIndex(of: itemController.items[indexPath.row]) {
+            if let _ = self.itemsInGroup.firstIndex(of: itemController.items[indexPath.row]) {
                 print("Item already exists")
-            } else {
-                self.group?.items.append(itemController.items[indexPath.row])
+            } else { self.itemsInGroup.append(itemController.items[indexPath.row])
                 addedItemsTableView.reloadData()
             }
         }
     }
     
+    
+    private func remove(item: Item) {
+        itemsInGroup.removeAll(where: { $0 == item })
+        addedItemsTableView.reloadData()
+    }
     
 }
