@@ -978,7 +978,7 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
-                                            <action selector="navButtonTappeed:" destination="qqo-Dz-ADA" eventType="touchUpInside" id="DD5-Il-bye"/>
+                                            <action selector="saveGroup:" destination="6fl-EH-Pic" eventType="touchUpInside" id="En0-Eu-bep"/>
                                         </connections>
                                     </button>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="H5q-D1-5xo">

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EditGroupDelegate {
+    func groupUpdated()
+}
+
 class AllGroupsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var allGroupsTableView: UITableView!
@@ -81,4 +85,12 @@ extension AllGroupsViewController: DetailViewDelegate {
     func updateViews() {
         allGroupsTableView.reloadData()
     }
+}
+
+extension AllGroupsViewController: EditGroupDelegate {
+    func groupUpdated() {
+        allGroupsTableView.reloadData()
+    }
+    
+    
 }

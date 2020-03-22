@@ -26,6 +26,7 @@ class EditGroupViewController: UIViewController {
         }
     }
     var itemsInGroup: [Item] = []
+    var delegate: EditGroupDelegate?
     
     // MARK: - Controllers
     
@@ -55,6 +56,24 @@ class EditGroupViewController: UIViewController {
         existingItemsTableView.dataSource = self
     }
 
+    private func remove(item: Item) {
+        itemsInGroup.removeAll(where: { $0 == item })
+        addedItemsTableView.reloadData()
+    }
+    
+    @IBAction func saveGroup(_ sender: Any) {
+        guard let title = groupNameLabel.text,
+            !title.isEmpty,
+            let group = self.group else { return }
+        
+        group.name = title
+        group.items = itemsInGroup
+        groupController.saveToPersistentStore()
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
 }
 
 // MARK: - Extensions
@@ -107,12 +126,6 @@ extension EditGroupViewController: UITableViewDataSource, UITableViewDelegate {
                 addedItemsTableView.reloadData()
             }
         }
-    }
-    
-    
-    private func remove(item: Item) {
-        itemsInGroup.removeAll(where: { $0 == item })
-        addedItemsTableView.reloadData()
     }
     
 }
