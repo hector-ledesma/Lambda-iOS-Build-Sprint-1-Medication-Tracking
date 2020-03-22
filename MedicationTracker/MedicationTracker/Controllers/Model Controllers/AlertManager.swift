@@ -37,6 +37,10 @@ class AlertManager: Codable {
         return false
     }
     
+    func deleteAlert2(at alert: Alert) {
+        self.alerts.removeAll(where: {$0 == alert})
+    }
+    
     
     func nukeAlerts() {
         // Will delete ALL notifications. For debugging purposes only

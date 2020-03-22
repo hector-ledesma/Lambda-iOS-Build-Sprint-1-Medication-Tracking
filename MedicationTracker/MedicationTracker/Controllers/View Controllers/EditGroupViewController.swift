@@ -74,12 +74,27 @@ class EditGroupViewController: UIViewController {
         }
         
         
+        // MARK: - Update contents of alert if there is one.
         if let activeAlert = alertManager.alerts.first(where: {$0.group == group}) {
             action()
             activeAlert.group = group
         } else {
             action()
         }
+        
+        // MARK: - Create or delete alert
+        if alertSwitch.isOn {
+            // delete
+            if let activeAlert = alertManager.alerts.first(where: {$0.group == group}) {
+                activeAlert.muteAlert()
+                alertManager.deleteAlert2(at: activeAlert)
+            } else {
+                // create
+                alertManager.createAlert(identifier: group)
+            }
+        }
+        
+        
         
         self.groupController.saveToPersistentStore()
         self.alertManager.saveToPersistentStore()
@@ -88,12 +103,13 @@ class EditGroupViewController: UIViewController {
     }
     
     func setAlertLabels() {
-        if let activeAlert = alertManager.alerts.first(where: {$0.group == group}) {
+        
+        
+        
+        if let _ = alertManager.alerts.first(where: {$0.group == group}) {
             alertLabel.text = "Delete Alert"
-            alertSwitch.isOn = true
         } else {
             alertLabel.text = "Create Alert"
-            alertSwitch.isOn = false
         }
     }
     
@@ -106,7 +122,6 @@ extension EditGroupViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count: Int = 0
         if tableView == addedItemsTableView {
-//            count = self.group!.items.count
             count = self.itemsInGroup.count
         } else if tableView == existingItemsTableView {
             count = self.itemController.items.count
@@ -120,7 +135,6 @@ extension EditGroupViewController: UITableViewDataSource, UITableViewDelegate {
         if tableView == addedItemsTableView {
             guard let addedItem = tableView.dequeueReusableCell(withIdentifier: "AddedItemsCell") as? AddedItemsTableViewCell else { return cell}
             
-//            addedItem.item = self.group?.items[indexPath.row]
             addedItem.item = self.itemsInGroup[indexPath.row]
             
             addedItem.buttonAction = { something in
