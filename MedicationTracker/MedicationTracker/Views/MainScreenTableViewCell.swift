@@ -57,7 +57,7 @@ class MainScreenTableViewCell: UITableViewCell {
     
     // MARK: - Button Functionality
     @IBAction func statusTapped(_ sender: UIButton) {
-        guard let group = identifier as? Group else { return }
+        guard let group = identifier else { return }
         switch group.status {
             case .standby:
                 group.status = .done

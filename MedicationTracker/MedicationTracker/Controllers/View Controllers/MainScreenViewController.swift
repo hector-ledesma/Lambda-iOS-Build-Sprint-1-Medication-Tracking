@@ -41,7 +41,7 @@ class MainScreenViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "MainMenuSegue" {
-            guard let mainMenuVC = segue.destination as? MainMenuViewController else { fatalError("Segue to MainMenu failed.") }
+            guard let _ = segue.destination as? MainMenuViewController else { fatalError("Segue to MainMenu failed.") }
             
         } else if segue.identifier == "EditItemSegue" {
             guard let editVC = segue.destination as? DetailViewController,
@@ -87,7 +87,7 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "mainViewCell") as? MainScreenTableViewCell else { fatalError("Could not convert items to cells") }
         
-        guard var group = alertManager.activeAlerts[indexPath.row].group else {fatalError()}
+        guard let group = alertManager.activeAlerts[indexPath.row].group else {fatalError()}
 
             cell.identifier = group
         

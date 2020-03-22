@@ -38,9 +38,6 @@ class GroupsForItemTableViewCell: UITableViewCell {
     
     private func updateViews() {
         groupNameLabel.text = group?.name
-        print("we here")
-        print(group)
-        print(item)
     }
     
     // MARK: - Button Functionality

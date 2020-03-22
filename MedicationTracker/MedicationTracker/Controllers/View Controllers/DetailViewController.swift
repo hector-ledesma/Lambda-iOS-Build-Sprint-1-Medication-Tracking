@@ -20,13 +20,11 @@ class DetailViewController: UIViewController {
     @IBOutlet var descLabel: UILabel!
     // TODO: Make create item view a text view as well
     @IBOutlet weak var descField: UITextField!
-    @IBOutlet weak var descStack: UIStackView!
     
     @IBOutlet weak var itemsLabel: UILabel!
     @IBOutlet weak var items2Label: UILabel!
     @IBOutlet weak var addedTableView: UITableView!
     @IBOutlet weak var existingItemsTableView: UITableView!
-    @IBOutlet weak var itemsStack: UIStackView!
     
     @IBOutlet weak var createAlertSwitch: UISwitch!
     @IBOutlet weak var createAlertStack: UIStackView!
