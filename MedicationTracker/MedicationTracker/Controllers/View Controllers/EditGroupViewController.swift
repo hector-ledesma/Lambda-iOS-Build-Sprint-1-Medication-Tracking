@@ -67,10 +67,22 @@ class EditGroupViewController: UIViewController {
             let group = self.group,
         let delegate = delegate else { return }
         
-        group.name = title
-        group.items = itemsInGroup
-        groupController.saveToPersistentStore()
-        dismiss(animated: true, completion: { delegate.groupUpdated() })
+        let action = {
+            group.name = title
+            group.items = self.itemsInGroup
+        }
+        
+        
+        if let activeAlert = alertManager.alerts.first(where: {$0.group == group}) {
+            action()
+            activeAlert.group = group
+        } else {
+            action()
+        }
+        
+        self.groupController.saveToPersistentStore()
+        self.alertManager.saveToPersistentStore()
+        self.dismiss(animated: true, completion: { delegate.groupUpdated() })
         
     }
     

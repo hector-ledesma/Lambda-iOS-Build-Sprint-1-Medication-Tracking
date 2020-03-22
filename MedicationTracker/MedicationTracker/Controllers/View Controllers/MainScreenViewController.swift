@@ -30,7 +30,6 @@ class MainScreenViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         loadPersistence()
-        
         tableView.reloadData()
         
     }
@@ -87,9 +86,11 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "mainViewCell") as? MainScreenTableViewCell else { fatalError("Could not convert items to cells") }
         
+        for alert in alertManager.activeAlerts {
+            print("Active alerg groups: \(alert.group!.name)")
+        }
         guard let group = alertManager.activeAlerts[indexPath.row].group else {fatalError()}
-
-            cell.identifier = group
+        cell.identifier = group
         
         return cell
     }

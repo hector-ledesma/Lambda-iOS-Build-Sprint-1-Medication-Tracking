@@ -50,7 +50,7 @@ class AlertManager: Codable {
     get {
         let fileManager = FileManager.default
         guard let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
-        let plistFile = documentsDir.appendingPathComponent("AlertTrackers.plist")
+        let plistFile = documentsDir.appendingPathComponent("AlertTrackers2.plist")
         
         return plistFile
         
