@@ -76,6 +76,7 @@ class AllGroupsViewController: UIViewController, UITableViewDelegate, UITableVie
                 let indexPath = allGroupsTableView.indexPathForSelectedRow else { fatalError() }
             
             groupEditVC.group = groupController.groups[indexPath.row]
+            groupEditVC.delegate = self
         }
     }
 

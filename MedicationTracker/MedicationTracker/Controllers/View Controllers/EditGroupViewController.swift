@@ -64,12 +64,13 @@ class EditGroupViewController: UIViewController {
     @IBAction func saveGroup(_ sender: Any) {
         guard let title = groupNameLabel.text,
             !title.isEmpty,
-            let group = self.group else { return }
+            let group = self.group,
+        let delegate = delegate else { return }
         
         group.name = title
         group.items = itemsInGroup
         groupController.saveToPersistentStore()
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: { delegate.groupUpdated() })
         
     }
     
