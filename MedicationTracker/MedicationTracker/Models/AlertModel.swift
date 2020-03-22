@@ -51,7 +51,7 @@ class Alert: Equatable, Codable {
         content.categoryIdentifier = "alarm"
         content.sound = UNNotificationSound.default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 120, repeats: true)
         
         let request = UNNotificationRequest(identifier: group.name, content: content, trigger: trigger)
         center.add(request)
