@@ -38,6 +38,7 @@ class EditGroupViewController: UIViewController {
         super.viewDidLoad()
         setDelegates()
         updateViews()
+        setAlertLabels()
     }
     
     // MARK: - Methods
@@ -86,6 +87,15 @@ class EditGroupViewController: UIViewController {
         
     }
     
+    func setAlertLabels() {
+        if let activeAlert = alertManager.alerts.first(where: {$0.group == group}) {
+            alertLabel.text = "Delete Alert"
+            alertSwitch.isOn = true
+        } else {
+            alertLabel.text = "Create Alert"
+            alertSwitch.isOn = false
+        }
+    }
     
 }
 

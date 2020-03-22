@@ -981,7 +981,7 @@
                                             <action selector="saveGroup:" destination="6fl-EH-Pic" eventType="touchUpInside" id="En0-Eu-bep"/>
                                         </connections>
                                     </button>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="H5q-D1-5xo">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="H5q-D1-5xo">
                                         <rect key="frame" x="211" y="737" width="173" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgL-tv-fK8">
