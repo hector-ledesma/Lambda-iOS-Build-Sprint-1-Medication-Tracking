@@ -69,7 +69,6 @@ class AlertManager: Codable {
         do {
             let alertsData = try propertyList.encode(AlertManager.alertManager.alerts)
             try alertsData.write(to: plistURL)
-            print("Saved alerts array: \(AlertManager.alertManager.alerts)")
         } catch {
             print("Error encoding Alerts: \(error)")
         }
@@ -82,7 +81,6 @@ class AlertManager: Codable {
             let plistDecoder = PropertyListDecoder()
             let decodedAlerts = try plistDecoder.decode([Alert].self , from: data)
             AlertManager.alertManager.alerts = decodedAlerts
-            print("Loaded alerts array: \(alerts)")
         } catch {
             print("Failed to load decoded Alerts array: \(error)")
         }

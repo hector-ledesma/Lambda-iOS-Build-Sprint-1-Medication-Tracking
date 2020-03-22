@@ -62,7 +62,6 @@ class GroupController: Codable {
         do {
             let groupsData = try propertyList.encode(groups)
             try groupsData.write(to: plistURL)
-            print("Saved groups: \(groups)")
         } catch {
             print("Error Groups Items: \(error)")
         }
@@ -75,7 +74,6 @@ class GroupController: Codable {
             let plistDecoder = PropertyListDecoder()
             let decodedGroups = try plistDecoder.decode([Group].self , from: groupData)
             groups = decodedGroups
-            print("Loaded groups: \(groups)")
             
         } catch {
             print("Failed to load decoded Groups array: \(error)")

@@ -40,7 +40,6 @@ class ItemController: Codable {
         do {
             let itemsData = try propertyList.encode(items)
             try itemsData.write(to: plistURL)
-            print("Saved items: \(items)")
         } catch {
             print("Error encoding Items: \(error)")
         }
@@ -53,7 +52,6 @@ class ItemController: Codable {
             let plistDecoder = PropertyListDecoder()
             let decodedItems = try plistDecoder.decode([Item].self , from: data)
             items = decodedItems
-            print("Loaded items: \(items)")
         } catch {
             print("Failed to load decoded Items array: \(error)")
         }

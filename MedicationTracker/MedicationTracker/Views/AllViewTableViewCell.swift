@@ -41,7 +41,6 @@ class AllViewTableViewCell: UITableViewCell {
         for group in groupController.groups {
             for item in group.items {
                 if item.name == itemsNameLabel.text {
-                    print("Found item in group: \(group.name)")
                     guard let indexToDelete = group.items.firstIndex(of: item) else { fatalError() }
                     print("Will delete item: \(group.items[indexToDelete].name)")
                     group.items.remove(at: indexToDelete)

@@ -32,7 +32,6 @@ class ExistingItemsTableViewCell: UITableViewCell {
     func updateView() {
         guard let item = item else { return }
         itemNameLabel.text = item.name
-        print(item.name)
         
     }
 

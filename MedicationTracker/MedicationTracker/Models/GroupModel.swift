@@ -39,12 +39,10 @@ class Group: Identifier, Equatable, Codable {
     // MARK: - Methods
     
     func muteAlerts() {
-        print("Outside the for loop")
         matchingAlert()?.muteAlert()
     }
     
     func matchingAlert() -> Alert? {
-        print("\(AlertManager.alertManager.alerts)")
         for alert in AlertManager.alertManager.alerts {
             if alert.group == self {
                 return alert

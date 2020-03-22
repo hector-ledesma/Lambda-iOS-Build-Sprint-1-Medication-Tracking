@@ -29,7 +29,6 @@ class AllGroupsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         allGroupsTableView.reloadData()
-        print(groupController.groups.count)
     }
     
     // MARK: - Table View Methods
@@ -46,7 +45,6 @@ class AllGroupsViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.groupCountLabel.text = group.items.count > 1 ? "\(groupController.groups[indexPath.row].items.count) items" : "\(groupController.groups[indexPath.row].items.count) item"
         
         cell.groupButtonAction = {
-            print("Hit")
             for activeAlert in self.alertManager.activeAlerts {
                 if activeAlert.group == group {
                     self.alertManager.deleteAlert(identifier: group as Identifier)

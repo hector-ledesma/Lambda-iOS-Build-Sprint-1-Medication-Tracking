@@ -28,7 +28,6 @@ class EditItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
-        print(getGroups(for: item!))
         if item != nil {
             updateViews()
         }
@@ -83,7 +82,6 @@ class EditItemViewController: UIViewController {
             for group in groupController.groups {
                 // indexOfGroup will be the index of the group that will get edited, and indexInGroup will be the index of the item that will be overlapped
                 if let indexInGroup = group.items.firstIndex(of: item), let indexOfGroup = groupController.groups.firstIndex(of: group) {
-                    print("Found a group")
                     indices[indexOfGroup] = indexInGroup
                 }
             }
