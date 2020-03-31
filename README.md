@@ -45,7 +45,7 @@ I would've loved to add a lot more functionality to the project in order to make
 
 > Mistake
 
-As my first time working on a full application entirely on my own, my first and biggest mistake came from my ![preparation](Layout-outline.png) :
+As my first time working on a full application entirely on my own, my first and biggest mistake came from my preparation : ![preparation](Layout-outline.png)
 
 I fell into the trap of devoting countless hours to designing overall UI Layouts, small UI elements and planning for extended functionality right off the bat.
 
