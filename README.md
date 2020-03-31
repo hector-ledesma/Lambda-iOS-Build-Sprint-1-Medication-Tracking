@@ -75,3 +75,13 @@ This is the part I feel where I grew the most, even though my mistake was simply
 As I study computer science on my own free time, I learned about the basic of Data Structures, and how SQL handles relationships through the use of unique IDs. As I've learned about this and UUIDs, I now can approach Data Structures in a much more efficient way.
 
 Given how the entirety of the app relies on the data structure, I now believe you must learn if your model holds up ***as soon as possible***.
+
+## 🔑  Key Lesson #4 - Code Organization
+
+> Mistake
+
+Unfortunately due to a combination of lack of experience and time crunch, my original plan of organizing my code went out the window. It got to a point where even I, as the programmer needed a couple of seconds to figure things out before I could continue writing more code.
+
+> Lesson
+
+I now understand the vast importance of OOP, using functions wherever possible, and using helpful descriptive comments. 
